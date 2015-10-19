@@ -1,0 +1,36 @@
+<div class="tanque">
+<div class="redimencionar" style="width:{{config.width}}px;">
+        <br/>
+        <div ng-show="xasanValues.admin" class="linhaBtnsTanque">
+            <div style="position: relative">
+                <p class="icone-clicavel" style="float:left;" ng-click="carregaTanque(dispositivo)" data-toggle="modal" data-target="#telaTanque"><img src="images/conf.jpg"></p>
+                <div style="width:95%">
+                  <img class="icone-clicavel" title="Configuração de alertas" src="images/alerta.png" style="width: 12%; margin: 5px auto; display: block;" ng-click="carregaAlerta()" data-toggle="modal" data-target="#telaAlerta">
+                  </div>
+                <p class="icone-clicavel" data-ng-click="confirmaDestruir()" data-toggle="modal" style="float:right; margin-top: -14%" ><img src="images/x.png"></p>
+            </div>
+        </div>
+         <p style="text-align: center; margin-top:16px; color:blue">{{dispositivo.nome}}</p>
+        <div ng-show ="dispositivo.erro == 0" class="volume">
+            <img class="imagemVolume icone-clicavel" src="images/{{calculaVolume()}}{{dispositivo.config.modelo}}.png">
+        </div>
+
+        <div ng-show="dispositivo.erro == 2 || dispositivo.erro == 3 || dispositivo.erro == 4" class="alerta">
+            <img class="icone-clicavel" ng-click="mostraErro()" style="width:100%; margin-top:10px;" src="images/alert.jpg">
+        </div>
+
+        <div class="textoTanque">
+            <p style="text-align: center;">Volume: {{dispositivo.volume}}L / {{calculaPorcentoVolume().toFixed()}}%</p>
+        </div>
+
+         <div ng-show="dispositivo.erro == 2 || dispositivo.erro == 3 || dispositivo.erro == 4" class="alerta">
+         <a>
+              <span align="right" ng-click="mostraErro()" class="icone-clicavel glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+         </a>
+          </div>
+    </div>
+    <div ng-show="xasanValues.admin" class="ui-resizable-handle ui-resizable-e ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 99; cursor: se-resize; float: right; position: relative;"></div>
+</div>
+    
+  
+  

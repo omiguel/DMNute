@@ -1,0 +1,27 @@
+<div ng-controller="homeController">
+    <div class="panel-heading table-bordered color-border" style="margin-top: 2em">
+        <div class="row">
+            <div>
+                <cabecalho cadastrados="cadastrados" userlogado="userLogado" mapa="mapa"></cabecalho>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-2 table-bordered tam-content color-border centralize" style="text-align: center">
+                <h2 style="margin-bottom: 0.5em"><span class="label label-success">Mapas</span></h2>
+                <div ng-repeat="map in mapas">
+                    <dropmapa mapa="map" ></dropmapa>
+                </div>
+            </div>
+            <div class="col-md-8 table-bordered tam-content color-border">
+                <mapa imagem="mapa.img" ></mapa>
+            </div>
+            <div class="col-md-2 table-bordered tam-content color-border centralize">
+                <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
+                <listaestoque dispsemestoque="alldisps"></listaestoque>
+            </div>
+        </div>
+    </div>
+</div>

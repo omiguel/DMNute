@@ -1,0 +1,79 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div>
+                <div class="row">
+                    <div  >
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Cadastro de usuario.</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <!--todo tem que ter a opcao de selecionar foto-->
+                                    <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{user.imagem}}" class="img-circle img-responsive" style="min-height: 13em"> </div>-->
+                                    <div class=" col-md-9 col-lg-9 ">
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>Tipo:</td>
+                                                <td>
+                                                    <label > Tipo de usuarior: </label>
+                                                    <select ng-model="user.tipo">
+                                                        <option value="">Selecione um tipo</option>
+                                                        <option ng-repeat="tipo in tipoUser.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nome:</td>
+                                                <td>
+                                                    <input ng-model="user.nome">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Setor:</td>
+                                                <td>
+                                                    <input ng-model="user.setor">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Login:</td>
+                                                <td>
+                                                    <input ng-model="user.login">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Senha:</td>
+                                                <td>
+                                                    <input type="password" ng-model="user.senha">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Confirmação de senha:</td>
+                                                <td>
+                                                    <input type="password" ng-model="user.confirmacaoSenha">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>
+                                                    <input ng-model="user.email">
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="cadastrarUsuario()">Salvar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

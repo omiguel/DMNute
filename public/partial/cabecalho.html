@@ -1,0 +1,59 @@
+<div>
+    <div class="row">
+        <div class="centralize col-md-4">
+            <form class="navbar-search">
+                <input type="text" class="search-query" placeholder="Busca dispositivo" style="height: 2.4em" ng-model="buscando">
+                <span class="glyphicon glyphicon-search btn btn-info" aria-hidden="true" ng-click="buscandoesse()"></span>
+            </form>
+        </div>
+        <div class="centralize col-md-4">
+            <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#caduser" ng-click="caduser()">Cadastrar usuario</button>
+        </div>
+        <div class="col-md-offset-1 col-md-3">
+            <button type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Colaboradores <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="cad in cadastrados" ><a class="btn" ng-click="showuser(cad)" data-toggle="modal" data-target="#viscolab">{{cad.nome}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style=" margin-top:2em; ">
+        <div class="centralize col-md-4">
+            <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addmapa" ng-click="addmapa()">Adicionar mapa</button>
+        </div>
+        <div class="col-md-4 centralize">
+            <h2><span class="label label-success btn" data-toggle="modal" data-target="#showdatamap" ng-click="showdadosmapa()">{{mapa.nome}}</span></h2>
+        </div>
+        <div class="centralize col-md-3">
+            <h2><span class="label label-success btn" data-toggle="modal" data-target="#showdatauser" ng-click="showuserlogado()">{{userlogado.nome}}</span></h2>
+        </div>
+        <div class="col-md-1">
+            <img src="{{userlogado.imagem}}" class="img-circle" style="max-width: 6em"/>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="showdatauser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <viscolab user="userlogado"></viscolab>
+</div>
+
+<!--modal que mostra dados do mapa-->
+<div class="modal fade" id="showdatamap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <showdatamap mapa="mapa"></showdatamap>
+</div><!-- /.modal -->
+
+<!--modal para adicionar mapa-->
+<div class="modal fade" id="addmapa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <addmapa></addmapa>
+</div>
+
+<!--modal para cadastrar usuarios-->
+<div class="modal fade" id="caduser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <caduser></caduser>
+</div><!-- /.modal -->
+
+<!--modal para visualizar colaboradores-->
+<div class="modal fade" id="viscolab" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <viscolab user="visuser"></viscolab>
+</div><!-- /.modal -->
