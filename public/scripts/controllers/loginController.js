@@ -8,7 +8,7 @@ app.controller("loginController",['$scope', '$location', function ($scope, $loca
     $scope.wind = "/home";
 
     $scope.logar = function(){
-        var msg = new Mensagem('logar', $scope, $scope.usuario);
+        var msg = new Mensagem($scope, 'logar', $scope.usuario);
 
         SIOM.logar(msg);
 

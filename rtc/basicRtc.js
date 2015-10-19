@@ -6,13 +6,12 @@
  * Created by Osvaldo on 16/10/15.
  */
 
-var hub = require('../hub/hub.js');
+//var hub = require('../hub/hub.js');
 var Mensagem = require('../util/mensagem.js');
 
 function BasicRtc(){
     var me = this;
     me.listeners = {};
-
 }
 
 BasicRtc.prototype.emitePraInterface = function(msg){
@@ -41,15 +40,15 @@ BasicRtc.prototype.convertMessageFromServerToBrowser = function(mensagem){
 };
 
 BasicRtc.prototype.basicWiring = function(){
-    var me = this;
-
-    me.listeners={
-        'login': me.emitePraInterface.bind(me)
-    };
-
-    for(var name in me.listeners){
-        hub.on(name, me.listeners[name]);
-    }
+//    var me = this;
+//
+//    me.listeners={
+//        'login': me.emitePraInterface.bind(me)
+//    };
+//
+//    for(var name in me.listeners){
+//        hub.on(name, me.listeners[name]);
+//    }
 };
 
 module.exports = BasicRtc;

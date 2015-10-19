@@ -19,8 +19,10 @@
         };
 
         me.trataEventoRecebido = function(ms){
-            console.log('escutei evento', ms.evento, socket.id);
-            me.emit(ms.evento, ms);
+            console.log('escutei evento', ms.evento, ms);
+            var mensagem  = new Mensagem(me);
+            mensagem.fromServer(ms);
+            me.emit(mensagem.getEvento(), mensagem);
         };
 
         me.wiring = function(){

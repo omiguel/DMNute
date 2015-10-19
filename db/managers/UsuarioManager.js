@@ -3,6 +3,7 @@ var Manager = require('./manager.js');
 var utility = require('util');
 var Model = require('../model/usuario.js');
 var hub = require('../../hub/hub.js');
+var Mensagem = require('../../util/mensagem.js');
 
 function UsuarioManager(){
     var me = this;
@@ -43,24 +44,24 @@ UsuarioManager.prototype.executaCrud = function(msg){
 };
 
 UsuarioManager.prototype.trataLogin = function(msg){
+    var me = this;
     var dado = msg.getDado();
+    var msgRet = null;
     console.log('estou chegando aqui', msg.getEvento(), dado);
 
     this.model.findOne({'login': dado.login, 'senha': dado.senha}, function(err, res){
         console.log('voltou do bando', err, res)
         if(res){
             console.log('voltou do banco', res);
-            msg.setEvento('login');
-            msg.setDado(res);
-            hub.emit(msg.getEvento(), msg);
+            msgRet = msg.next(me, 'login', res, msg.getFlag());
+            hub.emit(msgRet.getEvento(), msgRet);
         } else{
             //todo tratar o erro.
             if(err){
                 console.log('veio um erro do banco', err);
             } else{
-                msg.setEvento('invaliduser');
-                msg.setDado(res);
-                hub.emit(msg.getEvento(), msg);
+                msgRet = msg.next(me, 'invaliduser', res, msg.getFlag());
+                hub.emit(msgRet.getEvento(), msgRet);
             }
         }
     });

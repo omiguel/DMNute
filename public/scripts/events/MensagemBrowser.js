@@ -14,7 +14,7 @@
  *
  * @constructor
  */
-var Mensagem = function(evento, source, dado, flag, idMsg){
+var Mensagem = function(source, evento, dado, flag, idMsg){
     if(typeof source === 'undefined'){
         throw new Error("N�o � possivel criar uma mensagem sem um source");
     }
@@ -199,6 +199,16 @@ Mensagem.prototype.toServer = function(){
         erro: this.getErro(),
         flag: this.getFlag()
     };
+};
+
+Mensagem.prototype.fromServer = function(msg){
+    this.setEvento(msg.evento);
+    this.setFlag(msg.flag);
+    if(msg.success){
+        this.setDado(msg.dado);
+    } else{
+        this.setErro(msg.erro);
+    }
 };
 
 window.Mensagem = Mensagem;

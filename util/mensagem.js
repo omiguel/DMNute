@@ -88,12 +88,12 @@ function Mensagem(source, evento, dado, flag, rtc, idMsg){
  * para as mensagens participantes, tais como: rtc e id das mensagens participantes
  * @returns {Mensagem}
  */
-Mensagem.prototype.next = function(evento, success, dado, flag, rtc){
+Mensagem.prototype.next = function(source, evento, dado, flag, rtc){
     if(!rtc){
         rtc = this.getRtc();
     }
 
-    var msg =  new Mensagem(evento, source, dado, flag, rtc, this.getId());
+    var msg =  new Mensagem(source, evento, dado, flag, rtc, this.getId());
     return msg;
 };
 
@@ -237,15 +237,14 @@ Mensagem.prototype.setFlag = function(flag){
  * Formata o retorno desta mensagem para o browser.
  *
  *
- * @returns {{success: {boolean}, result: {object}, error: {object}, flag: {boolean}}}
+ * @returns {{success: {boolean}, dado: {object}, error: {object}, flag: {boolean}}}
  */
 Mensagem.prototype.toBrowser = function(){
     return {
         success: this.isSuccess(),
-        result: this.getDado(),
+        dado: this.getDado(),
         erro: this.getErro(),
         flag: this.getFlag(),
-        date: this.getDate(),
         evento: this.getEvento()
     };
 };

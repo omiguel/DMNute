@@ -42,16 +42,17 @@ RtcLoginManager.prototype.trataLogin = function(msg){
     if(msg.getRtc() == me){
         var dado = msg.getDado();
         console.log('chegou a resposta pro rtc', dado);
-        me.config.socket.emit('evento', msg);
+        me.emitePraInterface(msg);
         switch (dado.tipo){
             case 0:
-                rtcRoot(me.config);
+                console.log('cheguei no switch');
+                new rtcRoot(me.config);
                 break;
             case 1:
-                rtcAdmin(me.config);
+                new rtcAdmin(me.config);
                 break;
             case 2:
-                rtcComum(me.config);
+                new rtcComum(me.config);
                 break;
         }
     }

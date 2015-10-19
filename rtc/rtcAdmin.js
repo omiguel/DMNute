@@ -11,8 +11,6 @@ utility.inherits(RtcAdmin, basico);
 function RtcAdmin(conf){
     var me = this;
     me.config = conf;
-    me.listeners = {};
-    me.idMensagens = {};
 
     console.log('rtcRoottttt', me.config.socket.id);
 
