@@ -11,9 +11,14 @@ function Manager() {
 }
 
 Manager.prototype.create = function(msg){
+    var me = this;
     var dados = msg.getDado();
     this.model.create(dados, function(err, res){
-        console.log('estou no create', err, res)
+        if(res){
+            var evt = msg.getFlag()+'.created';
+            var msgRet = msg.next(me, evt, res, 'usuario');
+            hub.emit(msgRet.getEvento(), msgRet);
+        }
     })
 };
 

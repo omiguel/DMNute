@@ -9,7 +9,7 @@ function Banco() {
     var db;
     me.listeners = {};
     console.log("iniciou o banco");
-    Mongoose.connect('mongodb://localhost/devicemanager');
+    Mongoose.connect('mongodb://localhost/DMNute');
     this.mongoose = Mongoose;
     this.conectado = false;
     db = Mongoose.connection;

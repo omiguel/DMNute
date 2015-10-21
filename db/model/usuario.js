@@ -16,9 +16,14 @@ var options = {
 };
 
 var usuario = Mongoose.Schema({
-    login: types.String,
-    senha: types.String,
-    tipo: types.Number
+    login: {type: types.String, required: true},
+    senha: {type: types.String, required: true},
+    tipo: {type: types.Number, required: true},
+    nome: {type: types.String, required: true},
+    setor: {type: types.String, required: true},
+    email: {type: types.String},
+    ramal: {type: types.String},
+    imagem: {type: types.String}
 });
 
 module.exports = Mongoose.model('usuario', usuario);

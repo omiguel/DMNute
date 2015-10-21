@@ -14,6 +14,8 @@ function RtcRoot(conf){
 
     console.log('rtcRoottttt', me.config.socket.id);
 
+    hub.emit('rtcLogin.destroy');
+
     me.wiring();
     me.interfaceWiring();
 }

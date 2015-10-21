@@ -11,17 +11,6 @@ function UsuarioManager(){
     me.model = Model;
     me.listeners = {};
 
-//    var criaprimeirouser = function(){
-//
-//        var dados = {login: 'osvaldo', senha: 'osvaldo', tipo: 0};
-//
-//        me.model.create(dados, function(err, res){
-//            console.log('estou no create', err, res);
-//        })
-//    };
-//
-//    criaprimeirouser();
-
     me.wiring();
 }
 
@@ -33,9 +22,8 @@ utility.inherits(UsuarioManager, Manager);
  */
 UsuarioManager.prototype.executaCrud = function(msg){
     var me = this;
-    console.log('escutei no usuario', msg);
     var method = msg.getEvento().substr(msg.getEvento().lastIndexOf('.')+1);
-    console.log(method);
+    console.log('estou executando isso', method);
     try {
         me[method](msg);
     }catch (e){
@@ -50,7 +38,7 @@ UsuarioManager.prototype.trataLogin = function(msg){
     console.log('estou chegando aqui', msg.getEvento(), dado);
 
     this.model.findOne({'login': dado.login, 'senha': dado.senha}, function(err, res){
-        console.log('voltou do bando', err, res)
+        console.log('voltou do bando', err, res);
         if(res){
             console.log('voltou do banco', res);
             msgRet = msg.next(me, 'login', res, msg.getFlag());
