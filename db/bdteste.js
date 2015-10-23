@@ -70,7 +70,7 @@ bdteste.prototype.criaUsers = function(){
     };
     users.push(comum2);
 
-    var userMsg = new Mensagem(me, 'banco.usuario.create', users, 'usuario');
+    var userMsg = new Mensagem(me, 'banco.usuario.create', {res: users}, 'usuario');
     hub.emit(userMsg.getEvento(), userMsg);
 };
 
@@ -97,14 +97,14 @@ bdteste.prototype.criaMapa = function(){
         }
     ];
 
-    var msg = new Mensagem(me, 'banco.mapa.create', mapas, 'mapa');
+    var msg = new Mensagem(me, 'banco.mapa.create', {res: mapas}, 'mapa');
 
     hub.emit(msg.getEvento(), msg);
 };
 
 bdteste.prototype.retMapaCreate = function(msg){
     var me = this;
-    me.mapas = msg.getDado();
+    me.mapas = msg.getRes();
     me.criaSituacao();
 };
 
@@ -126,14 +126,14 @@ bdteste.prototype.criaSituacao = function(){
         }
     ];
 
-    var msg = new Mensagem(me, 'banco.situacao.create', situacoes, 'situacao');
+    var msg = new Mensagem(me, 'banco.situacao.create', {res: situacoes}, 'situacao');
 
     hub.emit(msg.getEvento(), msg);
 };
 
 bdteste.prototype.retSituacaoCreate = function(msg){
     var me = this;
-    me.situacoes = msg.getDado();
+    me.situacoes = msg.getRes();
     me.criaModeloDisp();
 };
 
@@ -157,22 +157,65 @@ bdteste.prototype.criaModeloDisp = function(){
         }
     ];
 
-    var msg = new Mensagem(me, 'banco.modelodisp.create', modelos, 'modelodisp');
+    var msg = new Mensagem(me, 'banco.modelodisp.create', {res: modelos}, 'modelodisp');
 
     hub.emit(msg.getEvento(), msg);
 };
 
 bdteste.prototype.retModeloDispCrete = function(msg){
     var me = this;
-    me.modelos = msg.getDado();
+    me.modelos = msg.getRes();
     me.criaDispositivo();
 };
 
 bdteste.prototype.criaDispositivo = function(){
     var me = this;
-    console.log('mapas', me.mapas);
-    console.log('situacoes', me.situacoes);
-    console.log('modelodisp', me.modelos);
+
+    var dispositivos = [
+        {
+            identificador: 'nute9079',
+            serialnumber: 'slhijfoa14389',
+            caminhoimg: 'aquiVaiUmCaminhoValido',
+            nome: 'dispboladao'
+        },
+        {
+            identificador: 'nute9079',
+            serialnumber: 'slhijfoa14389',
+            caminhoimg: 'aquiVaiUmCaminhoValido',
+            nome: 'dispboladao'
+        },
+        {
+            identificador: 'nute9079',
+            serialnumber: 'slhijfoa14389',
+            caminhoimg: 'aquiVaiUmCaminhoValido',
+            nome: 'dispboladao'
+        }
+    ];
+
+    var diferanca = 1;
+
+    var arrDisps = [];
+
+    for(var cont = 0; cont<4; cont++){
+        for(var index in dispositivos){
+            dispositivos[index].identificador = dispositivos[index].identificador+diferanca;
+            dispositivos[index].serialnumber = dispositivos[index].serialnumber+diferanca;
+            dispositivos[index].situacao = me.situacoes[index];
+            dispositivos[index].modelo = me.modelos[index];
+            dispositivos[index].mapa = me.mapas[index];
+            arrDisps.push(dispositivos[index]);
+            diferanca++;
+        }
+    }
+
+    var msg = new Mensagem(me, 'banco.dispositivo.create', {res: arrDisps}, 'dispositivo');
+    hub.emit(msg.getEvento(), msg);
+
+};
+
+bdteste.prototype.retDispCreate = function(msg){
+    var me = this;
+    console.log('dispositivo criado com sucesso', msg.getRes());
 };
 
 bdteste.prototype.wiring = function(){
@@ -182,6 +225,7 @@ bdteste.prototype.wiring = function(){
     me.listeners['mapa.created'] = me.retMapaCreate.bind(me);
     me.listeners['situacao.created'] = me.retSituacaoCreate.bind(me);
     me.listeners['modelodisp.created'] = me.retModeloDispCrete.bind(me);
+    me.listeners['dispositivo.created'] = me.retDispCreate.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

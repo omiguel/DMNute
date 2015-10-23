@@ -12,41 +12,68 @@ function Manager() {
 
 Manager.prototype.create = function(msg){
     var me = this;
-    var dados = msg.getDado();
+    var dados = msg.getRes();
     this.model.create(dados, function(err, res){
         if(res){
-            var evt = msg.getFlag()+'.created';
-            var msgRet = msg.next(me, evt, res, 'usuario');
-            hub.emit(msgRet.getEvento(), msgRet);
+            console.log('cheguei aqui');
+            me.emitManager(msg, '.created', {res: res});
+        } else{
+            me.emitManager(msg, '.error.created', {err: err});
         }
     })
 };
 
 Manager.prototype.read = function(msg){
-    var dados = msg.getDado();
-    if(dados.id){
-        this.model.findById(dados.id, function(err, res){
-            console.log('estou no read', err, res);
+    var me = this;
+    var dados = msg.getRes();
+    if(dados._id){
+        this.model.findById(dados._id, function(err, res){
+            if(res){
+                me.emitManager(msg, '.readed', {res: res});
+            } else{
+                me.emitManager(msg, '.error.readed', {err: err});
+            }
         })
     } else{
         this.model.find(function(err, res){
-            console.log('estou no read sem id', err, res);
+            if(res){
+                me.emitManager(msg, '.readed', {res: res});
+            } else{
+                me.emitManager(msg, '.error.readed', {err: err});
+            }
         })
     }
 };
 
 Manager.prototype.update = function(msg){
-    var dados = msg.getDado();
+    var me = this;
+    var dados = msg.getRes();
     this.model.findByIdAndUpdate(dados._id, {$set: dados}, function(err, res){
-        console.log('estou no update', err, res);
+        if(res){
+            me.emitManager(msg, '.updated', {res: res});
+        } else{
+            me.emitManager(msg, '.error.updated', {err: err});
+        }
     })
 };
 
 Manager.prototype.destroy = function(msg){
     var dados = msg.getDado();
     this.model.remove({_id: dados.id}, function(err, res){
-        console.log('estou no destroy', err, res);
+        if(res){
+            me.emitManager(msg, '.destroied', {res: res});
+        } else{
+            me.emitManager(msg, '.error.destroied', {err: err});
+        }
     })
+};
+
+Manager.prototype.emitManager = function(msgAntiga, subEvt, dado){
+    var me = this;
+    var evt = msgAntiga.getFlag()+subEvt;
+    var retorno = msgAntiga.next(me, evt, dado, msgAntiga.getFlag);
+    console.log("etou no emitManager", retorno);
+    hub.emit(retorno.getEvento(), retorno);
 };
 
 module.exports = Manager;

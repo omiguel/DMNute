@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d96f7f2-b462-47bf-a0ba-f486b07eb903" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/managers/MapaManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/managers/ModeloDispManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/managers/SituacaoManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/bdteste.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/model/dispositivo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/model/mapa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/model/modelodisp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/model/situacao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Banco.js" afterPath="$PROJECT_DIR$/db/Banco.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/managers/UsuarioManager.js" afterPath="$PROJECT_DIR$/db/managers/UsuarioManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/bdteste.js" afterPath="$PROJECT_DIR$/db/bdteste.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/model/dispositivo.js" afterPath="$PROJECT_DIR$/db/model/dispositivo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/index.js" afterPath="$PROJECT_DIR$/db/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/managers/index.js" afterPath="$PROJECT_DIR$/db/managers/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/managers/manager.js" afterPath="$PROJECT_DIR$/db/managers/manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rtc/rtcRoot.js" afterPath="$PROJECT_DIR$/rtc/rtcRoot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/model/usuario.js" afterPath="$PROJECT_DIR$/db/model/usuario.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/mensagem.js" afterPath="$PROJECT_DIR$/util/mensagem.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Beer-Game.iws" />
@@ -41,19 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homeController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+      <file leaf-file-name="manager.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2176">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bdteste.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/bdteste.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="18" selection-start="260" selection-end="260" vertical-scroll-proportion="0.21360256" vertical-offset="3" max-vertical-offset="3332">
+            <state line="13" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.23535676" vertical-offset="0" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -105,24 +85,24 @@
         <option value="$PROJECT_DIR$/public/scripts/controllers/loginController.js" />
         <option value="$PROJECT_DIR$/public/scripts/events/SIOM.js" />
         <option value="$PROJECT_DIR$/public/scripts/events/MensagemBrowser.js" />
-        <option value="$PROJECT_DIR$/util/mensagem.js" />
         <option value="$PROJECT_DIR$/db/model/modelodisp.js" />
         <option value="$PROJECT_DIR$/db/model/situacao.js" />
         <option value="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
         <option value="$PROJECT_DIR$/db/managers/situacao.js" />
         <option value="$PROJECT_DIR$/db/managers/index.js" />
-        <option value="$PROJECT_DIR$/db/model/dispositivo.js" />
         <option value="$PROJECT_DIR$/db/managers/UsuarioManager.js" />
-        <option value="$PROJECT_DIR$/db/index.js" />
-        <option value="$PROJECT_DIR$/db/managers/manager.js" />
         <option value="$PROJECT_DIR$/db/model/usuario.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/db/model/mapa.js" />
         <option value="$PROJECT_DIR$/db/managers/MapaManager.js" />
         <option value="$PROJECT_DIR$/db/managers/SituacaoManager.js" />
         <option value="$PROJECT_DIR$/db/managers/ModeloDispManager.js" />
-        <option value="$PROJECT_DIR$/db/bdteste.js" />
         <option value="$PROJECT_DIR$/db/Banco.js" />
+        <option value="$PROJECT_DIR$/db/model/dispositivo.js" />
+        <option value="$PROJECT_DIR$/db/bdteste.js" />
+        <option value="$PROJECT_DIR$/db/managers/manager.js" />
+        <option value="$PROJECT_DIR$/util/mensagem.js" />
+        <option value="$PROJECT_DIR$/db/index.js" />
       </list>
     </option>
   </component>
@@ -181,7 +161,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,93 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rtc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +227,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +282,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16027689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13951011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -421,11 +315,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/mapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/mapa.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.03723987" vertical-offset="0" max-vertical-offset="913" />
@@ -553,9 +442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rtc/basicRtc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="57" selection-start="755" selection-end="755" vertical-scroll-proportion="0.45802337" vertical-offset="28" max-vertical-offset="969">
-          <folding />
-        </state>
+        <state line="29" column="57" selection-start="755" selection-end="755" vertical-scroll-proportion="0.45802337" vertical-offset="28" max-vertical-offset="969" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rtc/rtcRoot.js">
@@ -565,9 +452,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/events/MensagemBrowser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="20" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.76514345" vertical-offset="2748" max-vertical-offset="3689">
-          <folding />
-        </state>
+        <state line="206" column="20" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.76514345" vertical-offset="2748" max-vertical-offset="3689" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/controllers/loginController.js">
@@ -577,16 +462,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rtc/rtcLoginManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="28" selection-start="1317" selection-end="1334" vertical-scroll-proportion="0.6025505" vertical-offset="181" max-vertical-offset="1326">
-          <folding />
-        </state>
+        <state line="44" column="28" selection-start="1317" selection-end="1334" vertical-scroll-proportion="0.6025505" vertical-offset="181" max-vertical-offset="1326" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/events/SIOM.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="50" selection-start="716" selection-end="716" vertical-scroll-proportion="0.4335813" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
+        <state line="24" column="50" selection-start="716" selection-end="716" vertical-scroll-proportion="0.4335813" vertical-offset="0" max-vertical-offset="941" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/app.js">
@@ -601,121 +482,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/dispositivo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="61" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/mensagem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="48" selection-start="996" selection-end="996" vertical-scroll-proportion="0.50584483" vertical-offset="0" max-vertical-offset="4726">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/managers/UsuarioManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="49" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1241">
-          <folding />
-        </state>
+        <state line="25" column="49" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1241" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="6" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.48306012" vertical-offset="0" max-vertical-offset="915">
-          <folding />
-        </state>
+        <state line="26" column="6" selection-start="1183" selection-end="1183" vertical-scroll-proportion="0.48306012" vertical-offset="0" max-vertical-offset="915" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/model/usuario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="613" selection-end="613" vertical-scroll-proportion="0.46971306" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
+        <state line="26" column="48" selection-start="613" selection-end="613" vertical-scroll-proportion="0.46971306" vertical-offset="0" max-vertical-offset="941" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
+    <entry file="file://$PROJECT_DIR$/db/model/mapa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+        <state line="22" column="46" selection-start="410" selection-end="410" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/MapaManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="35" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.79489905" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/model/situacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="54" selection-start="412" selection-end="412" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="18" selection-start="931" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/model/modelodisp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="10" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/ModeloDispManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="16" selection-start="430" selection-end="430" vertical-scroll-proportion="0.30712008" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/Banco.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="7" selection-start="592" selection-end="592" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/model/dispositivo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="62" selection-start="491" selection-end="675" vertical-scroll-proportion="0.4345048" vertical-offset="0" max-vertical-offset="939" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="5" selection-start="906" selection-end="906" vertical-scroll-proportion="0.61554843" vertical-offset="0" max-vertical-offset="939" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1087" column="66" selection-start="28876" selection-end="28876" vertical-scroll-proportion="0.29589632" vertical-offset="18205" max-vertical-offset="49878">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="40" selection-start="466" selection-end="466" vertical-scroll-proportion="0.32518598" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/mapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="46" selection-start="410" selection-end="410" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/MapaManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="35" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.79489905" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/situacao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="54" selection-start="412" selection-end="412" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="18" selection-start="931" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/modelodisp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="10" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/ModeloDispManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="430" selection-end="430" vertical-scroll-proportion="0.30712008" vertical-offset="0" max-vertical-offset="941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/Banco.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="7" selection-start="592" selection-end="592" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941">
+        <state line="6" column="20" selection-start="127" selection-end="127" vertical-scroll-proportion="0.1086262" vertical-offset="0" max-vertical-offset="939">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/bdteste.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="260" selection-end="260" vertical-scroll-proportion="0.21360256" vertical-offset="3" max-vertical-offset="3332">
+        <state line="73" column="43" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.56123537" vertical-offset="714" max-vertical-offset="4080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/mensagem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="22" selection-start="1865" selection-end="1865" vertical-scroll-proportion="1.0404686" vertical-offset="179" max-vertical-offset="4743">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="18" selection-start="264" selection-end="264" vertical-scroll-proportion="0.23535676" vertical-offset="0" max-vertical-offset="1428">
           <folding />
         </state>
       </provider>

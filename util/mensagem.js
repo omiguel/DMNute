@@ -69,18 +69,11 @@ function Mensagem(source, evento, dado, flag, rtc, idMsg){
     this._dado = dado;
 
     /**
-     * Em caso de erro, este atributo terá o objeto do erro.
-     * @type {Error}
-     * @private
-     */
-    this._erro = null;
-
-    /**
      * Boolean indiciando se esta mensagem é valida ou não
      * @type {boolean}
      * @private
      */
-    this._success = this._dado? true : false;
+    this._success = this._dado.res? true : false;
 }
 
 /**
@@ -149,9 +142,13 @@ Mensagem.prototype.clone = function(source){
  */
 Mensagem.prototype.setDado = function(dado){
     if(dado === void(0)) throw new Error("Invalid number of paramaters");
-    this._erro = null;
-    this._success = true;
     this._dado = dado;
+    return this;
+};
+
+Mensagem.prototype.setRes = function(res){
+    this._dado.res = res;
+    this._success = res? true : false;
     return this;
 };
 
@@ -160,10 +157,8 @@ Mensagem.prototype.setDado = function(dado){
  * @param {Error} dado
  */
 Mensagem.prototype.setErro = function(err){
-    if(dado === void(0)) throw new Error("Invalid number of paramaters");
-    this._dado = null;
-    this._success = false;
-    this._erro = err;
+    this._dado.err = err;
+    this._success = err? false : true;
     return this;
 };
 
@@ -200,12 +195,16 @@ Mensagem.prototype.getDado = function(){
     return this._dado;
 };
 
+Mensagem.prototype.getRes = function(){
+    return this._dado.res;
+};
+
 /**
  * Retorna um representação de erro, caso este objeto seja invalido == erro;
  * @returns {*}
  */
 Mensagem.prototype.getErro = function(){
-    return this._erro;
+    return this.this._dado.err;
 };
 
 Mensagem.prototype.getEvento = function(){
@@ -242,7 +241,7 @@ Mensagem.prototype.setFlag = function(flag){
 Mensagem.prototype.toBrowser = function(){
     return {
         success: this.isSuccess(),
-        dado: this.getDado(),
+        dado: this.getRes(),
         erro: this.getErro(),
         flag: this.getFlag(),
         evento: this.getEvento()
@@ -261,11 +260,13 @@ Mensagem.prototype.fromBrowser = function(msg, rtc){
     this.setRtc(rtc);
     this.setFlag(msg.flag);
     this.setEvento(msg.evento);
+    var dado = {};
     if(msg.success) {
-        this.setDado(msg.dados);
+        dado.res = msg.dado;
     }else{
-        this.setErro(msg.erro);
+        dado.err = msg.erro;
     }
+    this.setDado(dado);
 };
 
 

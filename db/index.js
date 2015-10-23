@@ -3,7 +3,7 @@
  */
 
 var hub = require('../hub/hub.js');
-require('./bdteste.js');
+//require('./bdteste.js');
 var Managers = null;
 
 /**
