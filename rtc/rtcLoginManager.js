@@ -26,7 +26,7 @@ RtcLoginManager.prototype.loginWiring = function(){
     var me = this;
     me.config.socket.on('logar', function(msgDoBrowser){
         console.log('cheguei aqui no rtc ', 'rtc.'+msgDoBrowser.evento, msgDoBrowser);
-        hub.emit('rtc.'+msgDoBrowser.evento,me.convertMessageFromBrowserToServer(msgDoBrowser));
+        hub.emit('rtc.'+msgDoBrowser.evento, me.convertMessageFromBrowserToServer(msgDoBrowser));
     });
 };
 
@@ -40,12 +40,10 @@ RtcLoginManager.prototype.trataLogin = function(msg){
     var me = this;
 
     if(msg.getRtc() == me){
-        var dado = msg.getDado();
-        console.log('chegou a resposta pro rtc', dado);
+        var dado = msg.getRes();
         me.emitePraInterface(msg);
         switch (dado.tipo){
             case 0:
-                console.log('cheguei no switch');
                 new rtcRoot(me.config);
                 break;
             case 1:
@@ -58,12 +56,22 @@ RtcLoginManager.prototype.trataLogin = function(msg){
     }
 };
 
+RtcLoginManager.prototype.loginError = function(msg){
+    var me = this;
+    me.emitePraInterface(msg);
+};
+
+RtcLoginManager.prototype.invaliduser = function(msg){
+    var me = this;
+    me.emitePraInterface(msg);
+};
+
 RtcLoginManager.prototype.wiring = function(){
     var me = this;
 
-    me.listeners={
-        'login': me.trataLogin.bind(me)
-    };
+    me.listeners['usuario.error.logar'] = me.loginError.bind(me);
+    me.listeners['usuario.invaliduser'] = me.invaliduser.bind(me);
+    me.listeners['usuario.login'] = me.trataLogin.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

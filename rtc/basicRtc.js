@@ -17,24 +17,20 @@ function BasicRtc(){
 BasicRtc.prototype.emitePraInterface = function(msg){
     var me = this;
     if(msg.getRtc() == me){
-        console.log('estou emitindo pra interface', msg.getEvento());
         var msgToBrowser = me.convertMessageFromServerToBrowser(msg);
         me.config.socket.emit('evento',msgToBrowser);
     }
 };
 
 BasicRtc.prototype.convertMessageFromBrowserToServer = function(msgDoBrowser){
-
     var me = this;
     var mensagem = new Mensagem(me); //source == this
     mensagem.fromBrowser(msgDoBrowser, me); //rtc == this
-    console.log("mensagem convertida", mensagem);
     return mensagem;
 
 };
 
 BasicRtc.prototype.convertMessageFromServerToBrowser = function(mensagem){
-
     var msgb = mensagem.toBrowser();
     return msgb;
 };

@@ -73,7 +73,7 @@ function Mensagem(source, evento, dado, flag, rtc, idMsg){
      * @type {boolean}
      * @private
      */
-    this._success = this._dado.res? true : false;
+    this._success = this._dado && this._dado.res? true : false;
 }
 
 /**
@@ -204,7 +204,7 @@ Mensagem.prototype.getRes = function(){
  * @returns {*}
  */
 Mensagem.prototype.getErro = function(){
-    return this.this._dado.err;
+    return this._dado.err;
 };
 
 Mensagem.prototype.getEvento = function(){
@@ -256,13 +256,12 @@ Mensagem.prototype.toBrowser = function(){
  * @param {Rtc} rtc
  */
 Mensagem.prototype.fromBrowser = function(msg, rtc){
-
     this.setRtc(rtc);
     this.setFlag(msg.flag);
     this.setEvento(msg.evento);
     var dado = {};
     if(msg.success) {
-        dado.res = msg.dado;
+        dado.res = msg.dados;
     }else{
         dado.err = msg.erro;
     }

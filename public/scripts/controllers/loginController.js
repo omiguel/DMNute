@@ -2,41 +2,50 @@
  * Created by Osvaldo on 05/10/15.
  */
 
-app.controller("loginController",['$scope', '$location', function ($scope, $location) {
-    $scope.listeners = {};
+app.controller("loginController",['$scope', '$location', 'setUserLogado', '$route',function ($scope, $location, setUserLogado, $route) {
+    var me = this;
+    me.listeners = {};
 
-    $scope.wind = "/home";
+    me.wind = "/home";
 
     $scope.logar = function(){
-        var msg = new Mensagem($scope, 'logar', $scope.usuario);
+        var msg = new Mensagem(me, 'logar', $scope.usuario, 'usuario');
 
         SIOM.logar(msg);
 
     };
 
-    $scope.logou = function(msg){
+    me.logou = function(msg){
 
-        console.log('recebi o login', msg);
-//        console.log('estou aquiii', $scope.wind);
-//        $location.path($scope.wind);
-
+        setUserLogado.setLogado(msg.getDado());
+        console.log('estou aquiii', me.wind);
+        $location.path(me.wind);
+        $route.reload();
     };
 
-    $scope.wiring = function(){
-        var sion = SIOM;
+    me.serverError = function(msg){
+        //todo criar um box de aviso que informa erros e sucessos
+        console.log('error', msg);
+    };
 
-        $scope.listeners={
-            'usuario.logou': $scope.logou.bind($scope)
-        };
+    me.invalidUser = function(msg){
+        //todo criar um box de aviso que informa erros e sucessos
+        console.log('invalidUser', msg);
+    };
 
-        for(var name in $scope.listeners){
+    me.wiring = function(){
+        me.listeners['usuario.login'] = me.logou.bind(me);
+        me.listeners['usuario.error.logar'] = me.serverError.bind(me);
+        me.listeners['usuario.invaliduser'] = me.invalidUser.bind(me);
 
-            sion.on(name, $scope.listeners[name]);
+        for(var name in me.listeners){
+
+            SIOM.on(name, me.listeners[name]);
 
         }
 
     };
 
-    $scope.wiring();
+    me.wiring();
 
 }]);

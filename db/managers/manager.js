@@ -15,7 +15,6 @@ Manager.prototype.create = function(msg){
     var dados = msg.getRes();
     this.model.create(dados, function(err, res){
         if(res){
-            console.log('cheguei aqui');
             me.emitManager(msg, '.created', {res: res});
         } else{
             me.emitManager(msg, '.error.created', {err: err});
@@ -72,7 +71,7 @@ Manager.prototype.emitManager = function(msgAntiga, subEvt, dado){
     var me = this;
     var evt = msgAntiga.getFlag()+subEvt;
     var retorno = msgAntiga.next(me, evt, dado, msgAntiga.getFlag);
-    console.log("etou no emitManager", retorno);
+    console.log("etou no emitManager", retorno.getDado());
     hub.emit(retorno.getEvento(), retorno);
 };
 

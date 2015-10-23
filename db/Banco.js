@@ -38,9 +38,7 @@ Banco.prototype.wiring = function(){
 
 Banco.prototype.repassaComando = function (msg) {
     var me = this;
-    console.log('escutei no banco');
     var novoEvento = 'banco.' + msg.getEvento();
-    console.log('estou emitindo isso>>>>', novoEvento);
     msg.setEvento(novoEvento);
     hub.emit(novoEvento, msg);
 };

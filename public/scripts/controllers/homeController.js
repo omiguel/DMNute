@@ -2,19 +2,14 @@
  * Created by Osvaldo on 23/09/15.
  */
 
-app.controller("homeController",['$scope', "$location", function ($scope, $location) {
+app.controller("homeController",['$scope', "$location", 'getUserLogado', function ($scope, $location, getUserLogado) {
 
     $scope.wind = "/";
     $scope.teste = true;
 
-    $scope.wiring = function(){
-        if(!$scope.teste){
-            console.log("logueiiiiii");
-            $location.path($scope.wind);
-        }
-    };
+    var id = Math.random();
 
-    $scope.wiring();
+    console.log('agora eh a hora', getUserLogado.getLogado(), $scope, id);
 
     $scope.listaestoque = 'essa é a lista do estoque';
 

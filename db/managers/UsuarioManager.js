@@ -27,30 +27,22 @@ UsuarioManager.prototype.executaCrud = function(msg){
     try {
         me[method](msg);
     }catch (e){
-        hub.emit('error.manager.usuario', e);
+        me.emitManager(msg, 'error.manager', {err: e});
     }
 };
 
 UsuarioManager.prototype.trataLogin = function(msg){
     var me = this;
-    var dado = msg.getDado();
+    var dado = msg.getRes();
     var msgRet = null;
-    console.log('estou chegando aqui', msg.getEvento(), dado);
 
     this.model.findOne({'login': dado.login, 'senha': dado.senha}, function(err, res){
-        console.log('voltou do bando', err, res);
         if(res){
-            console.log('voltou do banco', res);
-            msgRet = msg.next(me, 'login', res, msg.getFlag());
-            hub.emit(msgRet.getEvento(), msgRet);
+            me.emitManager(msg, '.login', {res: res});
+        } else if(err){
+            me.emitManager(msg, '.error.logar', {err: err});
         } else{
-            //todo tratar o erro.
-            if(err){
-                console.log('veio um erro do banco', err);
-            } else{
-                msgRet = msg.next(me, 'invaliduser', res, msg.getFlag());
-                hub.emit(msgRet.getEvento(), msgRet);
-            }
+            me.emitManager(msg, '.invaliduser', {res: res});
         }
     });
 };
