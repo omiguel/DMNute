@@ -8,6 +8,7 @@
 
 //var hub = require('../hub/hub.js');
 var Mensagem = require('../util/mensagem.js');
+var hub = require('../hub/hub.js');
 
 function BasicRtc(){
     var me = this;
@@ -18,7 +19,7 @@ BasicRtc.prototype.emitePraInterface = function(msg){
     var me = this;
     if(msg.getRtc() == me){
         var msgToBrowser = me.convertMessageFromServerToBrowser(msg);
-        me.config.socket.emit('evento',msgToBrowser);
+        me.config.socket.emit('retorno',msgToBrowser);
     }
 };
 
@@ -35,16 +36,10 @@ BasicRtc.prototype.convertMessageFromServerToBrowser = function(mensagem){
     return msgb;
 };
 
-BasicRtc.prototype.basicWiring = function(){
-//    var me = this;
-//
-//    me.listeners={
-//        'login': me.emitePraInterface.bind(me)
-//    };
-//
-//    for(var name in me.listeners){
-//        hub.on(name, me.listeners[name]);
-//    }
+BasicRtc.prototype.daInterface = function(msgDoBrowser){
+    var me = this;
+//    console.log('cheguei aqui no rtc ', 'rtc.'+msgDoBrowser.evento);
+    hub.emit('rtc.'+msgDoBrowser.evento, me.convertMessageFromBrowserToServer(msgDoBrowser));
 };
 
 module.exports = BasicRtc;

@@ -16,9 +16,11 @@ app.controller("loginController",['$scope', '$location', 'setUserLogado', '$rout
     };
 
     me.logou = function(msg){
-
         setUserLogado.setLogado(msg.getDado());
-        console.log('estou aquiii', me.wind);
+        SIOM.emit('setarota', msg.getDado().tipo);
+    };
+
+    me.nextView = function(){
         $location.path(me.wind);
         $route.reload();
     };
@@ -37,6 +39,7 @@ app.controller("loginController",['$scope', '$location', 'setUserLogado', '$rout
         me.listeners['usuario.login'] = me.logou.bind(me);
         me.listeners['usuario.error.logar'] = me.serverError.bind(me);
         me.listeners['usuario.invaliduser'] = me.invalidUser.bind(me);
+        me.listeners['rotasetada'] = me.nextView.bind(me);
 
         for(var name in me.listeners){
 

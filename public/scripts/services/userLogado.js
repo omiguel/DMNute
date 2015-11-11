@@ -4,7 +4,7 @@
 
 
 app.value('userLogado', {
-    user: 'eita que nao ta facil'
+    user: {}
 });
 
 app.factory('setUserLogado', ['userLogado', function(userLogado){

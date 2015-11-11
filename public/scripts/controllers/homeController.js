@@ -3,38 +3,9 @@
  */
 
 app.controller("homeController",['$scope', "$location", 'getUserLogado', function ($scope, $location, getUserLogado) {
+    var me = this;
 
-    $scope.wind = "/";
-    $scope.teste = true;
-
-    var id = Math.random();
-
-    console.log('agora eh a hora', getUserLogado.getLogado(), $scope, id);
-
-    $scope.listaestoque = 'essa é a lista do estoque';
-
-    $scope.listageral = 'lista geralllll';
-
-    //todo trabalhando no cabecalhooooooo
-    $scope.mapa = {
-        nome: 'meu mapa',
-        tipomapa: 'mapamund',
-        disps: [
-            {nome: 'disp1'},
-            {nome: 'disp2'},
-            {nome: 'disp3'}
-        ],
-        atual: true,
-        img: '../image/terreo.JPG'
-    };
-
-    $scope.userLogado = {
-        nome: 'Osvaldo',
-        setor: 'Suporte',
-        email: 'osvaldo@osvaldo.com',
-        ramal: 1963,
-        imagem: '../image/userImagem/osvaldo.JPG'
-    };
+    $scope.userLogado = getUserLogado.getLogado();
 
     $scope.cadastrados = [
         {
@@ -59,6 +30,23 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
             imagem: '../image/userImagem/artrides.JPG'
         }
     ];
+
+    $scope.listaestoque = 'essa é a lista do estoque';
+
+    $scope.listageral = 'lista geralllll';
+
+    //todo trabalhando no cabecalhooooooo
+    $scope.mapa = {
+        nome: 'meu mapa',
+        tipomapa: 'mapamund',
+        disps: [
+            {nome: 'disp1'},
+            {nome: 'disp2'},
+            {nome: 'disp3'}
+        ],
+        atual: true,
+        img: '../image/terreo.JPG'
+    };
 
     //todo trabalhando no lista geral
     $scope.mapas = [
@@ -114,5 +102,7 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
             $scope.mapas[index].atual = false;
         }
     };
+
+
 
 }]);

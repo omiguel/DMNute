@@ -3,7 +3,6 @@
  */
 
 function ConfigRotas($routeProvider) {
-    console.log('aquiiii');
     var me = this;
     me.route = $routeProvider;
 
@@ -11,42 +10,24 @@ function ConfigRotas($routeProvider) {
 
     me.wiring = function(){
 
-        me.route.when('/', {templateUrl: '../views/home.html', controller: 'homeController'});
+        me.route.when('/', {templateUrl: '../views/login.html', controller: 'loginController'});
         SIOM.on('setarota', me.setaRota.bind(me));
     };
 
-    me.alunoJogo = function(){
-
-        me.rotas['/jogoAluno'] = {templateUrl: '../views/jogoAluno.html', controller: 'jogoAlunoController'};
-    };
-
-    me.profLogado = function(){
-
-        me.rotas['/prepararJogo'] = {templateUrl: '../views/prepararJogo.html', controller: 'prepararJogoController'};
-        me.rotas['/jogoProfessor'] = {templateUrl: '../views/jogoProfessor.html', controller: 'jogoProfessorController'};
-    };
-
-    me.adminLogado = function(){
-
-        me.alunoJogo();
-        me.profLogado();
-        me.rotas['/cadProf'] = {templateUrl: '../views/cadastraProf.html', controller: 'cadastraProfController'};
-
+    me.incluiRota = function(){
+        me.rotas['/home'] = {templateUrl: '../views/home.html', controller: 'homeController'};
     };
 
     me.setaRota = function(tipoUser){
-        switch(tipoUser){
-            case 0:
-                me.adminLogado();
-                break;
-            case 1:
-                me.profLogado();
-                break
+        if(tipoUser != undefined){
+            me.incluiRota();
         }
 
         for(var name in me.rotas){
             me.route.when(name, me.rotas[name]);
         }
+        
+        SIOM.emit('rotasetada');
     };
 
     me.wiring();

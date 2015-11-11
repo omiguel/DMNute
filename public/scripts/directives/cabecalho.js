@@ -15,6 +15,9 @@ app.directive('cabecalho', function(){
         link: function(scope, element){
             console.log('scope', scope.nomelogado, scope.nomemapa);
 
+            var me = this;
+            me.listeners = {};
+
             scope.visuser = {};
 
             scope.mostrauser = false;
@@ -43,6 +46,25 @@ app.directive('cabecalho', function(){
 
             scope.showdadosmapa = function(){
                 console.log('quero ver os dados do mapa, os admins podem configurar', scope.nomemapa);
+            };
+
+            me.fazPedidos = function(){
+                var solicitacoes = {
+                    cadastrados: new Mensagem(me, 'usuario.read', {}, 'usuario')
+                };
+
+                for(var pedido in solicitacoes){
+                    SIOM.emitirServer(solicitacoes[pedido]);
+                }
+
+            };
+
+            me.wiring = function(){
+                me.fazPedidos();
+
+                for(var name in me.listeners){
+                    SIOM.on(name, me.listeners[name]);
+                }
             };
         }
     };

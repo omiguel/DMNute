@@ -15,20 +15,13 @@ function RtcLoginManager(conf){
     var me = this;
     me.config = conf;
     me.listeners = {};
+    me.interfaceListeners = {};
 
     console.log('estou no novo rtcLogin', me.config.socket.id);
 
     me.wiring();
-    me.loginWiring();
+    me.interfaceWiring();
 }
-
-RtcLoginManager.prototype.loginWiring = function(){
-    var me = this;
-    me.config.socket.on('logar', function(msgDoBrowser){
-        console.log('cheguei aqui no rtc ', 'rtc.'+msgDoBrowser.evento, msgDoBrowser);
-        hub.emit('rtc.'+msgDoBrowser.evento, me.convertMessageFromBrowserToServer(msgDoBrowser));
-    });
-};
 
 /**
  * Funcao que recebe o retorno do banco, se vier um usuario ele verifica o tipo para iniciar o rtc que representa
@@ -64,6 +57,16 @@ RtcLoginManager.prototype.loginError = function(msg){
 RtcLoginManager.prototype.invaliduser = function(msg){
     var me = this;
     me.emitePraInterface(msg);
+};
+
+RtcLoginManager.prototype.interfaceWiring = function(){
+    var me = this;
+
+    me.interfaceListeners['logar'] = me.daInterface.bind(me);
+
+    for(var name in me.interfaceListeners){
+        me.config.socket.on(name, me.interfaceListeners[name]);
+    }
 };
 
 RtcLoginManager.prototype.wiring = function(){

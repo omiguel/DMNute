@@ -7,13 +7,10 @@
         var me = this;
 
         me.logar = function(msg){
-            console.log('logando aqui', msg);
             socket.emit('logar', msg.toServer());
         };
 
-        me.emitir = function(evento, mensagem){
-
-            console.log('no siom', mensagem.getEvento(),mensagem.getDado(), mensagem.toServer());
+        me.emitirServer = function(mensagem){
 
             socket.emit(mensagem.getEvento(), mensagem.toServer());
         };
@@ -28,7 +25,7 @@
         me.wiring = function(){
             var me = this;
 
-            socket.on('evento', me.trataEventoRecebido.bind(me));
+            socket.on('retorno', me.trataEventoRecebido.bind(me));
 
         };
         me.wiring();

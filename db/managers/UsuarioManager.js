@@ -23,7 +23,6 @@ utility.inherits(UsuarioManager, Manager);
 UsuarioManager.prototype.executaCrud = function(msg){
     var me = this;
     var method = msg.getEvento().substr(msg.getEvento().lastIndexOf('.')+1);
-    console.log('estou executando isso', method);
     try {
         me[method](msg);
     }catch (e){
@@ -34,7 +33,6 @@ UsuarioManager.prototype.executaCrud = function(msg){
 UsuarioManager.prototype.trataLogin = function(msg){
     var me = this;
     var dado = msg.getRes();
-    var msgRet = null;
 
     this.model.findOne({'login': dado.login, 'senha': dado.senha}, function(err, res){
         if(res){

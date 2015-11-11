@@ -71,7 +71,6 @@ Manager.prototype.emitManager = function(msgAntiga, subEvt, dado){
     var me = this;
     var evt = msgAntiga.getFlag()+subEvt;
     var retorno = msgAntiga.next(me, evt, dado, msgAntiga.getFlag);
-    console.log("etou no emitManager", retorno.getDado());
     hub.emit(retorno.getEvento(), retorno);
 };
 
