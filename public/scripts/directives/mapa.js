@@ -10,6 +10,24 @@ app.directive('mapa', function(){
             imagem: '='
         },
         templateUrl: '../../partial/mapa.html',
-        link: function(scope, element){}
+        link: function(scope, element){
+            var me = this;
+            me.listeners = {};
+
+            me.setMapa = function(img){
+                scope.imagem = img;
+                scope.$apply();
+            };
+
+            me.wiring = function(){
+                me.listeners['start'] = me.setMapa.bind(me);
+
+                for(var name in me.listeners){
+                    SIOM.on(name, me.listeners[name]);
+                }
+            };
+
+            me.wiring();
+        }
     };
 });

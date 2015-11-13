@@ -12,7 +12,6 @@ var hub = require('../hub/hub.js');
 
 function BasicRtc(){
     var me = this;
-    me.listeners = {};
 }
 
 BasicRtc.prototype.emitePraInterface = function(msg){

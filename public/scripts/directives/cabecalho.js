@@ -8,8 +8,7 @@ app.directive('cabecalho', function(){
         transclude: true,
         scope:{
             userlogado: '=',
-            mapa: '=',
-            cadastrados: '='
+            mapa: '='
         },
         templateUrl: '../../partial/cabecalho.html',
         link: function(scope, element){
@@ -19,8 +18,8 @@ app.directive('cabecalho', function(){
             me.listeners = {};
 
             scope.visuser = {};
-
             scope.mostrauser = false;
+            scope.cadastrados = [];
 
             scope.buscandoesse = function(){
                 console.log(scope.buscando);
@@ -50,7 +49,7 @@ app.directive('cabecalho', function(){
 
             me.fazPedidos = function(){
                 var solicitacoes = {
-                    cadastrados: new Mensagem(me, 'usuario.read', {}, 'usuario')
+                    cadastrados: new Mensagem(me, 'cadastrados', {}, 'usuario')
                 };
 
                 for(var pedido in solicitacoes){
@@ -59,13 +58,22 @@ app.directive('cabecalho', function(){
 
             };
 
+            me.setCadastrados = function(msg){
+                scope.cadastrados = msg.getDado();
+                scope.$apply();
+            };
+
             me.wiring = function(){
-                me.fazPedidos();
+                me.listeners['usuario.pegacadastrados'] = me.setCadastrados.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);
                 }
+
+                me.fazPedidos();
             };
+
+            me.wiring();
         }
     };
 });

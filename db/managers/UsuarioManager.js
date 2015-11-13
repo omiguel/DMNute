@@ -45,10 +45,28 @@ UsuarioManager.prototype.trataLogin = function(msg){
     });
 };
 
+UsuarioManager.prototype.getAllRootLess = function(msg){
+    var me = this;
+    var retorno = [];
+    this.model.find(function(err, res){
+        if(res){
+            for(var index in res){
+                if(res[index].tipo != 0){
+                    retorno.push(res[index]);
+                }
+            }
+            me.emitManager(msg, '.pegacadastrados', {res: retorno});
+        } else{
+            me.emitManager(msg, '.error.pegacadastrados', {err: err});
+        }
+    })
+};
+
 UsuarioManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.usuario.*'] = me.executaCrud.bind(me);
     me.listeners['rtc.logar'] = me.trataLogin.bind(me);
+    me.listeners['rtc.cadastrados'] = me.getAllRootLess.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

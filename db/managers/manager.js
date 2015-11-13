@@ -25,6 +25,7 @@ Manager.prototype.create = function(msg){
 Manager.prototype.read = function(msg){
     var me = this;
     var dados = msg.getRes();
+    console.log(msg.getEvento(), dados);
     if(dados._id){
         this.model.findById(dados._id, function(err, res){
             if(res){

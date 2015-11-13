@@ -26,9 +26,9 @@ function Banco() {
 Banco.prototype.wiring = function(){
     var me = this;
 
-    me.listeners = {
-        'rtc.usuario.*': me.repassaComando.bind(me)
-    };
+    me.listeners['rtc.usuario.*'] = me.repassaComando.bind(me);
+    me.listeners['rtc.mapa.*'] = me.repassaComando.bind(me);
+    me.listeners['rtc.dispositivo.*'] = me.repassaComando.bind(me);
     
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

@@ -34,10 +34,9 @@ RtcLoginManager.prototype.trataLogin = function(msg){
 
     if(msg.getRtc() == me){
         var dado = msg.getRes();
-        me.emitePraInterface(msg);
         switch (dado.tipo){
             case 0:
-                new rtcRoot(me.config);
+                new rtcRoot(me.config, msg);
                 break;
             case 1:
                 new rtcAdmin(me.config);
@@ -46,6 +45,8 @@ RtcLoginManager.prototype.trataLogin = function(msg){
                 new rtcComum(me.config);
                 break;
         }
+
+        me.emitePraInterface(msg);
     }
 };
 
