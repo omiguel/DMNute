@@ -16,7 +16,7 @@
         };
 
         me.trataEventoRecebido = function(ms){
-            console.log('escutei evento', ms.evento, ms);
+            console.log('escutei evento', ms.evento);
             var mensagem  = new Mensagem(me);
             mensagem.fromServer(ms);
             me.emit(mensagem.getEvento(), mensagem);
@@ -24,7 +24,6 @@
 
         me.wiring = function(){
             var me = this;
-
             socket.on('retorno', me.trataEventoRecebido.bind(me));
 
         };

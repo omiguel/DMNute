@@ -65,6 +65,7 @@ app.directive('cabecalho', function(){
 
             me.wiring = function(){
                 me.listeners['usuario.pegacadastrados'] = me.setCadastrados.bind(me);
+                me.listeners['novoUserCadastrado'] = me.fazPedidos.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);

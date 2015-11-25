@@ -37,7 +37,6 @@ BasicRtc.prototype.convertMessageFromServerToBrowser = function(mensagem){
 
 BasicRtc.prototype.daInterface = function(msgDoBrowser){
     var me = this;
-//    console.log('cheguei aqui no rtc ', 'rtc.'+msgDoBrowser.evento);
     hub.emit('rtc.'+msgDoBrowser.evento, me.convertMessageFromBrowserToServer(msgDoBrowser));
 };
 

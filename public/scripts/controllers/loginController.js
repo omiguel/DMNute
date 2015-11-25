@@ -10,7 +10,6 @@ app.controller("loginController",['$scope', '$location', 'setUserLogado', '$rout
 
     $scope.logar = function(){
         var msg = new Mensagem(me, 'logar', $scope.usuario, 'usuario');
-
         SIOM.logar(msg);
 
     };

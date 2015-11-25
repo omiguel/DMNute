@@ -12,8 +12,6 @@ app.directive('dropmapa', function(){
         templateUrl: '../../partial/dropmapa.html',
         link: function(scope, element){
 
-            console.log('dropmapa', scope.$parent.$parent);
-
             scope.mostrameusdisps = function(){
                 scope.mostradisps = scope.mostradisps? false: true;
                 scope.$parent.$parent.mapa = scope.mapa;

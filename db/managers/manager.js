@@ -50,7 +50,13 @@ Manager.prototype.update = function(msg){
     var dados = msg.getRes();
     this.model.findByIdAndUpdate(dados._id, {$set: dados}, function(err, res){
         if(res){
-            me.emitManager(msg, '.updated', {res: res});
+            me.model.findById(dados._id, function(err, res){
+                if(res){
+                    me.emitManager(msg, '.updated', {res: res});
+                } else{
+                    me.emitManager(msg, '.error.readedupdated', {err: err});
+                }
+            });
         } else{
             me.emitManager(msg, '.error.updated', {err: err});
         }

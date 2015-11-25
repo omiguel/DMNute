@@ -36,7 +36,7 @@ RtcLoginManager.prototype.trataLogin = function(msg){
         var dado = msg.getRes();
         switch (dado.tipo){
             case 0:
-                new rtcRoot(me.config, msg);
+                new rtcRoot(me.config);
                 break;
             case 1:
                 new rtcAdmin(me.config);
@@ -70,12 +70,20 @@ RtcLoginManager.prototype.interfaceWiring = function(){
     }
 };
 
+RtcLoginManager.prototype.destroy = function(){
+    var me = this;
+    for(var name in me.listeners){
+        hub.removeListener(name, me.listeners[name]);
+    }
+};
+
 RtcLoginManager.prototype.wiring = function(){
     var me = this;
 
     me.listeners['usuario.error.logar'] = me.loginError.bind(me);
     me.listeners['usuario.invaliduser'] = me.invaliduser.bind(me);
     me.listeners['usuario.login'] = me.trataLogin.bind(me);
+    me.listeners['rtcLogin.destroy'] = me.destroy.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

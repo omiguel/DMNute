@@ -6,6 +6,7 @@ var hub = require('../hub/hub.js');
 var Mensagem = require('../util/mensagem.js');
 var utility = require('util');
 var basico = require('./basicRtc.js');
+var fs = require('fs');
 utility.inherits(RtcRoot, basico);
 
 function RtcRoot(conf){
@@ -22,20 +23,23 @@ function RtcRoot(conf){
     me.interfaceWiring();
 }
 
+RtcRoot.prototype.teste = function(msg){
+    console.log('chegou ', msg);
+};
+
 RtcRoot.prototype.wiring = function(){
     var me = this;
 
     me.listeners['usuario.pegacadastrados'] = me.emitePraInterface.bind(me);
     me.listeners['mapa.readed'] = me.emitePraInterface.bind(me);
     me.listeners['dispositivo.readed'] = me.emitePraInterface.bind(me);
+    me.listeners['usuario.created'] = me.emitePraInterface.bind(me);
+    me.listeners['usuario.updated'] = me.emitePraInterface.bind(me);
+
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);
     }
-};
-
-RtcRoot.prototype.teste = function(msg){
-    console.log('testando aqui', msg);
 };
 
 RtcRoot.prototype.interfaceWiring = function(){
@@ -43,6 +47,8 @@ RtcRoot.prototype.interfaceWiring = function(){
     me.browserlisteners['cadastrados'] = me.daInterface.bind(me);
     me.browserlisteners['mapa.read'] = me.daInterface.bind(me);
     me.browserlisteners['dispositivo.read'] = me.daInterface.bind(me);
+    me.browserlisteners['usuario.create'] = me.daInterface.bind(me);
+    me.browserlisteners['usuario.update'] = me.daInterface.bind(me);
 
     for(var name in me.browserlisteners){
         me.config.socket.on(name, me.browserlisteners[name]);

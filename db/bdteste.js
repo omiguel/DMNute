@@ -30,7 +30,7 @@ bdteste.prototype.criaUsers = function(){
         setor: 'suporte',
         email: 'osvaldo.miguel@grad.ufsc.br',
         ramal: '1963',
-        imagem: '../image/userImagem/osvaldo.JPG'
+        imagem: '/image/userImagem/osvaldo.JPG'
     };
     users.push(userRoot);
 
@@ -42,7 +42,7 @@ bdteste.prototype.criaUsers = function(){
         setor: 'Financeiro',
         email: 'tobias@tobias.com',
         ramal: '1964',
-        imagem: '../image/userImagem/tobias.JPG'
+        imagem: '/image/userImagem/tobias.JPG'
     };
     users.push(userAdmin);
 
@@ -54,7 +54,7 @@ bdteste.prototype.criaUsers = function(){
         setor: 'Portaria',
         email: 'basilio@basilio.com',
         ramal: '1965',
-        imagem: '../image/userImagem/basilio.PNG'
+        imagem: '/image/userImagem/basilio.PNG'
     };
     users.push(comum1);
 
@@ -66,7 +66,7 @@ bdteste.prototype.criaUsers = function(){
         setor: 'Secretaria',
         email: 'artrides@artrides.com',
         ramal: '1966',
-        imagem: '../image/userImagem/artrides.PNG'
+        imagem: '/image/userImagem/artrides.PNG'
     };
     users.push(comum2);
 
@@ -85,15 +85,15 @@ bdteste.prototype.criaMapa = function(){
     var mapas = [
         {
             nome: 'meu mapa',
-            img: '../image/terreo.JPG'
+            img: '/image/terreo.JPG'
         },
         {
             nome: 'mapa lindo',
-            img: '../image/pavimento_1_andar.JPG'
+            img: '/image/pavimento_1_andar.JPG'
         },
         {
             nome: 'mapa locao',
-            img: '../image/avignon_planta_11_andar.JPG'
+            img: '/image/avignon_planta_11_andar.JPG'
         }
     ];
 

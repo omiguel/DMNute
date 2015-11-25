@@ -10,8 +10,6 @@
                             </div>
                             <div class="panel-body">
                                 <div class="row">
-                                    <!--todo tem que ter a opcao de selecionar foto-->
-                                    <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{user.imagem}}" class="img-circle img-responsive" style="min-height: 13em"> </div>-->
                                     <div class=" col-md-9 col-lg-9 ">
                                         <table class="table table-user-information">
                                             <tbody>
@@ -29,6 +27,12 @@
                                                 <td>Nome:</td>
                                                 <td>
                                                     <input ng-model="user.nome">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Escolha a imagem:</td>
+                                                <td>
+                                                    <input class="file" type="file"/>
                                                 </td>
                                             </tr>
                                             <tr>
