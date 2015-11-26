@@ -6,7 +6,7 @@
                     <div  >
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Cadastro de usuario.</h3>
+                                <h3 class="panel-title">Cadastro de dispositivo.</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -14,19 +14,28 @@
                                         <table class="table table-user-information">
                                             <tbody>
                                             <tr>
-                                                <td>Tipo de usuarior:</td>
+                                                <td>Identificador:</td>
                                                 <td>
-                                                    <select ng-model="user.tipo">
-                                                        <option value="">Selecione um tipo</option>
-                                                        <option ng-repeat="tipo in tipoUser.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
-                                                    </select>
+                                                    <input ng-model="disp.identificador">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Nome:</td>
+                                                <td>Modelo:</td>
                                                 <td>
-                                                    <input ng-model="user.nome">
+                                                    <select ng-model="disp.modelo">
+                                                        <option value="">Selecione um tipo</option>
+                                                        <option ng-repeat="tipo in tipoDisp.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
+                                                    </select>
+                                                    <span class="glyphicon glyphicon-cog btn btn-warning" aria-hidden="true" ng-click="cadastraModelo()"></span>
                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marca:</td>
+                                                <td>marca conforme modelo escolhido..</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Modelo:</td>
+                                                <td>modelo conforme modelo escolhido..</td>
                                             </tr>
                                             <tr>
                                                 <td>Escolha a imagem:</td>
@@ -35,33 +44,18 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Setor:</td>
+                                                <td>SerialNumber:</td>
                                                 <td>
-                                                    <input ng-model="user.setor">
+                                                    <input ng-model="disp.serialnumber">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Login:</td>
+                                                <td>Situacao:</td>
                                                 <td>
-                                                    <input ng-model="user.login">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Senha:</td>
-                                                <td>
-                                                    <input type="password" ng-model="user.senha">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Confirmação de senha:</td>
-                                                <td>
-                                                    <input type="password" ng-model="user.confirmacaoSenha">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email</td>
-                                                <td>
-                                                    <input ng-model="user.email">
+                                                    <select ng-model="disp.situacao">
+                                                        <option value="">Selecione um tipo</option>
+                                                        <option ng-repeat="tipo in tipoDisp.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
+                                                    </select>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -75,7 +69,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success" ng-click="cadastrarUsuario()">Salvar</button>
+            <button type="button" class="btn btn-success" ng-click="cadastrarDispositivo()">Salvar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </div>
     </div><!-- /.modal-content -->

@@ -35,7 +35,8 @@ RtcRoot.prototype.wiring = function(){
     me.listeners['dispositivo.readed'] = me.emitePraInterface.bind(me);
     me.listeners['usuario.created'] = me.emitePraInterface.bind(me);
     me.listeners['usuario.updated'] = me.emitePraInterface.bind(me);
-
+    me.listeners['mapa.created'] = me.emitePraInterface.bind(me);
+    me.listeners['mapa.updated'] = me.emitePraInterface.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);
@@ -49,6 +50,8 @@ RtcRoot.prototype.interfaceWiring = function(){
     me.browserlisteners['dispositivo.read'] = me.daInterface.bind(me);
     me.browserlisteners['usuario.create'] = me.daInterface.bind(me);
     me.browserlisteners['usuario.update'] = me.daInterface.bind(me);
+    me.browserlisteners['mapa.create'] = me.daInterface.bind(me);
+    me.browserlisteners['mapa.update'] = me.daInterface.bind(me);
 
     for(var name in me.browserlisteners){
         me.config.socket.on(name, me.browserlisteners[name]);

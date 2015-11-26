@@ -19,9 +19,21 @@
                 <mapa imagem="mapa.img" ></mapa>
             </div>
             <div class="col-md-2 table-bordered tam-content color-border centralize">
-                <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-warning" style="margin-top: 1em;" data-toggle="modal" data-target="#caddisp">Cad. disp.</button>
+                    </div>
+                </div>
                 <listaestoque dispsemestoque="alldisps"></listaestoque>
             </div>
         </div>
     </div>
 </div>
+
+<!--modal para cadastrar dispositivo-->
+<div class="modal fade" id="caddisp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <caddisp></caddisp>
+</div><!-- /.modal -->

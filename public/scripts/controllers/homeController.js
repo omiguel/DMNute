@@ -64,6 +64,7 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
     me.wiring = function(){
         me.listeners['mapa.readed'] = me.setMapas.bind(me);
         me.listeners['dispositivo.readed'] = me.setDisps.bind(me);
+        me.listeners['novoMapa'] = me.fazPedidos.bind(me);
 
         for(var name in me.listeners){
             SIOM.on(name, me.listeners[name]);

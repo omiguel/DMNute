@@ -22,7 +22,7 @@ var dispositivo = Mongoose.Schema({
     nome: {type: types.String, required: true},
     situacao: {type: types.ObjectId, ref: 'situacao'},
     modelo: {type: types.ObjectId, ref: 'modelodisp', required: true},
-    mapa: {type: types.ObjectId, ref: 'mapa', required: true},
+    mapa: {type: types.ObjectId, ref: 'mapa'},
     localizacao: {type: types.String}
 });
 
