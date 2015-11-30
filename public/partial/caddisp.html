@@ -22,20 +22,23 @@
                                             <tr>
                                                 <td>Modelo:</td>
                                                 <td>
-                                                    <select ng-model="disp.modelo">
-                                                        <option value="">Selecione um tipo</option>
-                                                        <option ng-repeat="tipo in tipoDisp.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
+                                                    <select ng-model="disp.modelo" ng-change="setaMarcaModeloTipo()">
+                                                        <option value="">Selecione um modelo</option>
+                                                        <option ng-repeat="model in modelos" value="{{model}}">{{model.apresentacao}}</option>
                                                     </select>
-                                                    <span class="glyphicon glyphicon-cog btn btn-warning" aria-hidden="true" ng-click="cadastraModelo()"></span>
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>Tipo:</td>
+                                                <td>{{conferencia.tipo}}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>Marca:</td>
-                                                <td>marca conforme modelo escolhido..</td>
+                                                <td>{{conferencia.marca}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Modelo:</td>
-                                                <td>modelo conforme modelo escolhido..</td>
+                                                <td>{{conferencia.modelo}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Escolha a imagem:</td>
@@ -54,7 +57,7 @@
                                                 <td>
                                                     <select ng-model="disp.situacao">
                                                         <option value="">Selecione um tipo</option>
-                                                        <option ng-repeat="tipo in tipoDisp.tipos" value="{{tipo.id}}">{{tipo.nome}}</option>
+                                                        <option ng-repeat="situacao in situacoes" value="{{situacao}}">{{situacao.nome}}</option>
                                                     </select>
                                                 </td>
                                             </tr>

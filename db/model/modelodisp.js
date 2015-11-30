@@ -18,7 +18,8 @@ var options = {
 var modelodisp = Mongoose.Schema({
     tipodisp: {type: types.String, required: true},
     marca: {type: types.String, required: true},
-    modelo: {type: types.String, required: true}
+    modelo: {type: types.String, required: true},
+    apresentacao: {type: types.String, required: true}
 });
 
 module.exports = Mongoose.model('modelodisp', modelodisp);

@@ -1,0 +1,53 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div>
+                <div class="row">
+                    <div  >
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Cadastro de modelo.</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class=" col-md-9 col-lg-9 ">
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>Tipo:</td>
+                                                <td>
+                                                    <input ng-keyup="setaModelo()" ng-model="modelo.tipodisp">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marca:</td>
+                                                <td>
+                                                    <input ng-keyup="setaModelo()" ng-model="modelo.marca">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Modelo:</td>
+                                                <td>
+                                                    <input ng-keyup="setaModelo()" ng-model="modelo.modelo">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apresentação:</td>
+                                                <td>{{modelo.apresentacao}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="cadastrarModelo()">Salvar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

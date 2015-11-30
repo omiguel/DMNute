@@ -24,7 +24,10 @@
                         <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn btn-warning" style="margin-top: 1em;" data-toggle="modal" data-target="#caddisp">Cad. disp.</button>
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#caddisp">Cad. disp.</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-warning" style="margin-top: 0.3em;" data-toggle="modal" data-target="#cadmodel">Cad. mod.</button>
                     </div>
                 </div>
                 <listaestoque dispsemestoque="alldisps"></listaestoque>
@@ -36,4 +39,9 @@
 <!--modal para cadastrar dispositivo-->
 <div class="modal fade" id="caddisp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <caddisp></caddisp>
+</div><!-- /.modal -->
+
+<!--modal para cadastrar usuarios-->
+<div class="modal fade" id="cadmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <cadmodel></cadmodel>
 </div><!-- /.modal -->
