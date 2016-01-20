@@ -29,7 +29,7 @@ app.directive('dropmapa', function(){
 
             scope.configmapa = function(map){
                 console.log('quero config esse mapa>>>>>', map);
-            }
+            };
 
         }
     };

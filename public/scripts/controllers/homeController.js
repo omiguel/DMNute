@@ -27,7 +27,7 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         }
         $scope.mapa = msg.getDado()[0];
         SIOM.emit('start', $scope.mapa.img);
-        var dispositivos = new Mensagem(me, 'dispositivo.read', {}, 'dispositivo');
+        var dispositivos = new Mensagem(me, 'dispositivocomplete.read', {}, 'dispositivo');
         SIOM.emitirServer(dispositivos);
     };
 
@@ -35,11 +35,14 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         $scope.alldisps = msg.getDado();
         for(var map in $scope.mapas){
             for(var dsp in $scope.alldisps){
+                $scope.alldisps[dsp].cor = $scope.alldisps[dsp].mapa? 'color:blue' : 'color:red';
                 if($scope.mapas[map]._id == $scope.alldisps[dsp].mapa){
                     $scope.mapas[map].disps.push($scope.alldisps[dsp]);
                 }
             }
         }
+
+        SIOM.emit('mapasprontos', $scope.mapas);
 
         $scope.$apply();
     };

@@ -6,7 +6,7 @@
         <div ng-show="mapa.atual">
             <ul class="ulnobullet">
                 <li ng-repeat="disp in mapa.disps" style="margin-bottom: 0.3em">
-                    <a class="btn" ng-click="showdisp(disp)">{{disp.nome}}</a>
+                    <a class="btn" ng-click="showdisp(disp)" style="{{disp.cor}}">{{disp.identificador}}</a>
                     <span class="glyphicon glyphicon-cog btn btn-warning" aria-hidden="true" ng-click="pegadispmapa(disp)"></span>
                 </li>
             </ul>

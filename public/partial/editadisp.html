@@ -1,0 +1,64 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div>
+                <div class="row">
+                    <div  >
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Editar dispositivo.</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class=" col-md-9 col-lg-9 ">
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>{{editDisp.caminhoimg}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Patrimonio:</td>
+                                                <td>{{editDisp.identificador}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Serial:</td>
+                                                <td>{{editDisp.serialnumber}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tipo:</td>
+                                                <td>{{editDisp.modelo.tipodisp}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marca:</td>
+                                                <td>{{editDisp.modelo.marca}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Situação:</td>
+                                                <td>{{editDisp.situacao.nome}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mapa atual:</td>
+                                                <td>
+                                                    <div style="margin-bottom: 1em"><img src="{{mapaatual.atual.img}}" class="img-responsive"></div>
+                                                    <select ng-model="mapaatual.novo">
+                                                        <option value="">{{mapaatual.atual.nome}}</option>
+                                                        <option ng-repeat="mapa in mapas" value="{{mapa}}">{{mapa.nome}}</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="cadastrarDispositivo()">Salvar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d96f7f2-b462-47bf-a0ba-f486b07eb903" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/partial/cadmodel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/directives/cadmodel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Banco.js" afterPath="$PROJECT_DIR$/db/Banco.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/partial/editadisp.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/directives/editadisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/managers/DispositivoManager.js" afterPath="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partial/caddisp.html" afterPath="$PROJECT_DIR$/public/partial/caddisp.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/caddisp.js" afterPath="$PROJECT_DIR$/public/scripts/directives/caddisp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/home.html" afterPath="$PROJECT_DIR$/public/views/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/model/dispositivo.js" afterPath="$PROJECT_DIR$/db/model/dispositivo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partial/dropmapa.html" afterPath="$PROJECT_DIR$/public/partial/dropmapa.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" afterPath="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/controllers/homeController.js" afterPath="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/managers/manager.js" afterPath="$PROJECT_DIR$/db/managers/manager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/model/modelodisp.js" afterPath="$PROJECT_DIR$/db/model/modelodisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partial/listaestoque.html" afterPath="$PROJECT_DIR$/public/partial/listaestoque.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/listaestoque.js" afterPath="$PROJECT_DIR$/public/scripts/directives/listaestoque.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rtc/rtcRoot.js" afterPath="$PROJECT_DIR$/rtc/rtcRoot.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,10 +39,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="caddisp.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="homeController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="64" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editadisp.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/partial/editadisp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="111" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.5958379" vertical-offset="153" max-vertical-offset="1173">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editadisp.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/directives/editadisp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="27" selection-start="346" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="caddisp.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/partial/caddisp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="49" selection-start="2259" selection-end="2259" vertical-scroll-proportion="0.35377875" vertical-offset="306" max-vertical-offset="1428">
+            <state line="60" column="61" selection-start="3796" selection-end="3796" vertical-scroll-proportion="-20.423077" vertical-offset="489" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -47,54 +80,7 @@
       <file leaf-file-name="caddisp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scripts/directives/caddisp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="48" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1258">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadmodel.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/partial/cadmodel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="108" selection-start="982" selection-end="982" vertical-scroll-proportion="-8.961538" vertical-offset="73" max-vertical-offset="986">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadmodel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/directives/cadmodel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="77" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rtcRoot.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rtc/rtcRoot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="68" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Banco.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/Banco.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="64" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SituacaoManager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="32" selection-start="937" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+            <state line="39" column="14" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
               <folding />
             </state>
           </provider>
@@ -113,12 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/views/teste.html" />
-        <option value="$PROJECT_DIR$/public/scripts/controllers/testeController.js" />
-        <option value="$PROJECT_DIR$/public/views/login.html" />
-        <option value="$PROJECT_DIR$/public/scripts/events/Mensagem.js" />
-        <option value="$PROJECT_DIR$/rtc/rtc.js" />
-        <option value="$PROJECT_DIR$/rtc/rtcAdminRoot.js" />
         <option value="$PROJECT_DIR$/rtc/rtcAdmin.js" />
         <option value="$PROJECT_DIR$/rtc/rtcComum.js" />
         <option value="$PROJECT_DIR$/public/scripts/events/MensagemBrowser.js" />
@@ -133,8 +113,6 @@
         <option value="$PROJECT_DIR$/public/scripts/services/userLogado.js" />
         <option value="$PROJECT_DIR$/public/scripts/app.js" />
         <option value="$PROJECT_DIR$/public/scripts/directives/mapa.js" />
-        <option value="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
-        <option value="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/loginController.js" />
         <option value="$PROJECT_DIR$/public/scripts/rotas.js" />
         <option value="$PROJECT_DIR$/rtc/rtcLoginManager.js" />
@@ -142,28 +120,36 @@
         <option value="$PROJECT_DIR$/db/bdteste.js" />
         <option value="$PROJECT_DIR$/db/index.js" />
         <option value="$PROJECT_DIR$/public/scripts/events/SIOM.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/rtc/basicRtc.js" />
         <option value="$PROJECT_DIR$/public/scripts/directives/caduser.js" />
         <option value="$PROJECT_DIR$/public/scripts/directives/cabecalho.js" />
         <option value="$PROJECT_DIR$/public/partial/addmapa.html" />
         <option value="$PROJECT_DIR$/db/model/mapa.js" />
         <option value="$PROJECT_DIR$/public/scripts/services/utilFactory.js" />
-        <option value="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/public/scripts/directives/addmapa.js" />
-        <option value="$PROJECT_DIR$/db/model/dispositivo.js" />
         <option value="$PROJECT_DIR$/public/partial/cabecalho.html" />
         <option value="$PROJECT_DIR$/public/partial/caduser.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/home.html" />
         <option value="$PROJECT_DIR$/db/model/modelodisp.js" />
         <option value="$PROJECT_DIR$/db/managers/manager.js" />
         <option value="$PROJECT_DIR$/public/partial/cadmodel.html" />
         <option value="$PROJECT_DIR$/public/scripts/directives/cadmodel.js" />
         <option value="$PROJECT_DIR$/db/Banco.js" />
-        <option value="$PROJECT_DIR$/rtc/rtcRoot.js" />
+        <option value="$PROJECT_DIR$/db/model/dispositivo.js" />
+        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/public/partial/caddisp.html" />
         <option value="$PROJECT_DIR$/public/scripts/directives/caddisp.js" />
+        <option value="$PROJECT_DIR$/public/partial/device.html" />
+        <option value="$PROJECT_DIR$/public/partial/dropmapa.html" />
+        <option value="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/partial/listaestoque.html" />
+        <option value="$PROJECT_DIR$/public/scripts/directives/listaestoque.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
+        <option value="$PROJECT_DIR$/rtc/rtcRoot.js" />
+        <option value="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
+        <option value="$PROJECT_DIR$/public/scripts/directives/editadisp.js" />
+        <option value="$PROJECT_DIR$/public/partial/editadisp.html" />
       </list>
     </option>
   </component>
@@ -222,7 +208,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -373,34 +358,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Beer-Game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DMNute" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="managers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xasanDesktopFE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Beer-Game" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
@@ -446,14 +414,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1512247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16932908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -486,51 +454,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="34" selection-start="443" selection-end="443" vertical-scroll-proportion="0.27929902" vertical-offset="0" max-vertical-offset="913" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/events/MensagemBrowser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="24" selection-start="4043" selection-end="4047" vertical-scroll-proportion="0.59080964" vertical-offset="2775" max-vertical-offset="3689" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="3" selection-start="162" selection-end="162" vertical-scroll-proportion="0.18104367" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtc/rtcComum.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtc/rtcAdmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="299" selection-end="299" vertical-scroll-proportion="0.2172524" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/mapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="3" selection-start="740" selection-end="740" vertical-scroll-proportion="0.57933974" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/dropmapa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="78" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="18" selection-start="649" selection-end="649" vertical-scroll-proportion="0.47071353" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="88" selection-start="1479" selection-end="1484" vertical-scroll-proportion="0.5399781" vertical-offset="0" max-vertical-offset="913" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/controllers/loginController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="6" selection-start="616" selection-end="616" vertical-scroll-proportion="0.4463895" vertical-offset="0" max-vertical-offset="986" />
@@ -566,31 +489,14 @@
         <state line="31" column="5" selection-start="1011" selection-end="1148" vertical-scroll-proportion="0.5910987" vertical-offset="102" max-vertical-offset="4726" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/UsuarioManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="55" selection-start="1900" selection-end="1900" vertical-scroll-proportion="1.0724175" vertical-offset="132" max-vertical-offset="1377" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/events/SIOM.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="10" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rtc/basicRtc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="353" selection-end="353" vertical-scroll-proportion="0.3258786" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/mapa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.03723987" vertical-offset="0" max-vertical-offset="913" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/model/usuario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="52" selection-start="667" selection-end="667" vertical-scroll-proportion="0.50692225" vertical-offset="0" max-vertical-offset="939">
-          <folding />
-        </state>
+        <state line="28" column="52" selection-start="667" selection-end="667" vertical-scroll-proportion="0.50692225" vertical-offset="0" max-vertical-offset="939" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/model/mapa.js">
@@ -598,41 +504,51 @@
         <state line="19" column="29" selection-start="342" selection-end="342" vertical-scroll-proportion="0.34398296" vertical-offset="0" max-vertical-offset="939" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/MapaManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="49" selection-start="927" selection-end="938" vertical-scroll-proportion="0.66986156" vertical-offset="0" max-vertical-offset="939">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="8" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/services/utilFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="45" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/addmapa.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="85" selection-start="1609" selection-end="1609" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="850" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/addmapa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="30" selection-start="1901" selection-end="1909" vertical-scroll-proportion="0.80404687" vertical-offset="367" max-vertical-offset="1445" />
+        <state line="34" column="38" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.60170394" vertical-offset="13" max-vertical-offset="952" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/listaestoque.js">
+    <entry file="file://$PROJECT_DIR$/db/model/modelodisp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="54" selection-start="501" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
+        <state line="18" column="12" selection-start="275" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/caduser.html">
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/cadmodel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="69" selection-start="828" selection-end="828" vertical-scroll-proportion="0.14895947" vertical-offset="136" max-vertical-offset="1479" />
+        <state line="21" column="77" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/model/situacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="391" selection-end="399" vertical-scroll-proportion="0.39829606" vertical-offset="0" max-vertical-offset="939" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/cadmodel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="108" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="32" selection-start="937" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/caduser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="14" selection-start="596" selection-end="1368" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="20" selection-start="2308" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1921">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/device.html">
@@ -640,104 +556,89 @@
         <state line="35" column="2" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.6516977" vertical-offset="0" max-vertical-offset="913" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/caduser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="269" selection-end="269" vertical-scroll-proportion="0.018104367" vertical-offset="170" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/dropmapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.23535676" vertical-offset="0" max-vertical-offset="939" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/addmapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.60170394" vertical-offset="13" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/cabecalho.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="17" selection-start="1518" selection-end="1766" vertical-scroll-proportion="0.456869" vertical-offset="523" max-vertical-offset="1462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/cabecalho.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="2445" selection-end="2625" vertical-scroll-proportion="0.73932093" vertical-offset="175" max-vertical-offset="1088" />
+        <state line="50" column="0" selection-start="2445" selection-end="2625" vertical-scroll-proportion="0.9309967" vertical-offset="0" max-vertical-offset="1088" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/public/partial/mapa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="55" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.72617745" vertical-offset="0" max-vertical-offset="913" />
+        <state line="2" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.03723987" vertical-offset="0" max-vertical-offset="913" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/listaestoque.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="40" selection-end="40" vertical-scroll-proportion="0.018619934" vertical-offset="0" max-vertical-offset="913" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/viscolab.html">
+    <entry file="file://$PROJECT_DIR$/public/partial/showdatamap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="939" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/home.html">
+    <entry file="file://$PROJECT_DIR$/public/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="56" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.48411828" vertical-offset="0" max-vertical-offset="913" />
+        <state line="10" column="3" selection-start="162" selection-end="162" vertical-scroll-proportion="0.18104367" vertical-offset="0" max-vertical-offset="939" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/ModeloDispManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="65" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
+    <entry file="file://$PROJECT_DIR$/public/scripts/services/utilFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="39" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/modelodisp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="275" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/cadmodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="77" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="7" column="60" selection-start="142" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/model/dispositivo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="7" selection-start="667" selection-end="667" vertical-scroll-proportion="0.45260915" vertical-offset="0" max-vertical-offset="939">
+        <state line="20" column="14" selection-start="389" selection-end="399" vertical-scroll-proportion="0.36131775" vertical-offset="0" max-vertical-offset="941">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/model/situacao.js">
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/mapa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="391" selection-end="399" vertical-scroll-proportion="0.39829606" vertical-offset="0" max-vertical-offset="939">
+        <state line="32" column="3" selection-start="740" selection-end="740" vertical-scroll-proportion="0.5781084" vertical-offset="0" max-vertical-offset="941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/dropmapa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="14" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/cadmodel.html">
+    <entry file="file://$PROJECT_DIR$/public/partial/dropmapa.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="108" selection-start="982" selection-end="982" vertical-scroll-proportion="-8.961538" vertical-offset="73" max-vertical-offset="986">
+        <state line="8" column="108" selection-start="620" selection-end="620" vertical-scroll-proportion="0.14863388" vertical-offset="0" max-vertical-offset="915" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/cabecalho.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="48" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.4218916" vertical-offset="521" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="42" selection-start="2238" selection-end="2238" vertical-scroll-proportion="-30.076923" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/listaestoque.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="76" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/listaestoque.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="36" selection-start="498" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="126" selection-start="1413" selection-end="1456" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="884">
           <folding />
         </state>
       </provider>
@@ -749,31 +650,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
+    <entry file="file://$PROJECT_DIR$/rtc/basicRtc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="32" selection-start="937" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+        <state line="39" column="77" selection-start="978" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/ModeloDispManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="65" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/MapaManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="49" selection-start="927" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="941">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/UsuarioManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="6" selection-start="1291" selection-end="1712" vertical-scroll-proportion="0.63868225" vertical-offset="436" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="13" selection-start="1038" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1530">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rtc/rtcRoot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="68" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1224">
+        <state line="54" column="49" selection-start="1800" selection-end="1824" vertical-scroll-proportion="0.6517572" vertical-offset="306" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="39" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.60170394" vertical-offset="115" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/caduser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="69" selection-start="828" selection-end="828" vertical-scroll-proportion="-5.230769" vertical-offset="136" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/viscolab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="185" selection-start="589" selection-end="690" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="64" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="1496">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/caddisp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="48" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1258">
+        <state line="39" column="14" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/caddisp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="49" selection-start="2259" selection-end="2259" vertical-scroll-proportion="0.35377875" vertical-offset="306" max-vertical-offset="1428">
+        <state line="60" column="61" selection-start="3796" selection-end="3796" vertical-scroll-proportion="-20.423077" vertical-offset="489" max-vertical-offset="1428">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/editadisp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="346" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/editadisp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="111" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.5958379" vertical-offset="153" max-vertical-offset="1173">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

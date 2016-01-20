@@ -21,7 +21,22 @@ app.directive('caddisp', ['utilFactory', function(utilFactory){
             scope.modelos = [];
 
             scope.cadastrarDispositivo = function(){
-                console.log('aqui vou comecar a nova saga de cadastro.');
+                scope.disp.modelo = JSON.parse(scope.disp.modelo);
+                scope.disp.situacao = JSON.parse(scope.disp.situacao);
+                var msg = new Mensagem(me, 'dispositivo.create', scope.disp, 'dispositivo');
+                SIOM.emitirServer(msg);
+            };
+
+            me.salvaImagem = function(msg){
+                var dado = msg.getDado();
+                var file = element.find('input.file')[0].files[0];
+                var iddisp = dado._id;
+                var retorno = function(data){
+                    dado.caminhoimg = data.localImagem;
+                    var msg = new Mensagem(me, 'dispositivo.update', dado, 'dispositivo');
+                    SIOM.emitirServer(msg);
+                };
+                utilFactory.upImagem(iddisp, file, 'dispositivo', retorno);
             };
 
             me.fazpedidos = function(){
@@ -52,9 +67,15 @@ app.directive('caddisp', ['utilFactory', function(utilFactory){
                 scope.$apply();
             };
 
+            me.teste = function(msg){
+                console.log('chegou o dipositivo totamente cadastrado', msg.getDado());
+            };
+
             me.wiring = function(){
                 me.listeners['modelodisp.readed'] = me.lidoModelos.bind(me);
                 me.listeners['situacao.readed'] = me.lidoSituacoes.bind(me);
+                me.listeners['dispositivo.created'] = me.salvaImagem.bind(me);
+                me.listeners['dispositivo.updated'] = me.teste.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);

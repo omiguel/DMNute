@@ -64,7 +64,8 @@ app.post('/upimage', function(req, res){
     var pegaCaminho = function(){
         var caminho = {
             usuario: '/image/userImagem/',
-            mapa: '/image/mapa/'
+            mapa: '/image/mapa/',
+            dispositivo: '/image/dispositivo/'
         };
         localSave = caminho[doque]+id+path.extname(localFilename);
         salvaImagem();

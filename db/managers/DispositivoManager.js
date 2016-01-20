@@ -34,9 +34,24 @@ DispositivoManager.prototype.executaCrud = function(msg){
     }
 };
 
+DispositivoManager.prototype.getDispComplete = function(msg){
+    var me = this;
+    var dados = msg.getRes();
+    this.model.find()
+        .populate('situacao modelo mapa')
+        .exec(function(err, res){
+            if(err){
+                me.emitManager(msg, '.error.readed', {err: er});
+            } else{
+                me.emitManager(msg, '.readed', {res: res});
+            }
+        });
+};
+
 DispositivoManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.dispositivo.*'] = me.executaCrud.bind(me);
+    me.listeners['rtc.dispositivocomplete.read'] = me.getDispComplete.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

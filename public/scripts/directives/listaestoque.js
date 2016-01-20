@@ -17,8 +17,8 @@ app.directive('listaestoque', function(){
             };
 
             scope.pegadispmapa = function(disp){
-                console.log('quero as configs desse cara', disp);
-            }
+                SIOM.emit('editadisp', disp);
+            };
         }
     };
 });
