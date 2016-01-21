@@ -30,6 +30,12 @@ app.directive('editadisp', function(){
 
             me.recebeMapas = function(mapas){
                 scope.mapas = mapas;
+                console.log('será que esta dando pau aqui?', mapas);
+            };
+
+            scope.trocaMapa = function(){
+                console.log('trocando aqui', scope.mapaatual);
+                scope.mapaatual.atual = JSON.parse(scope.mapaatual.novo);
             };
 
             me.wiring = function(){

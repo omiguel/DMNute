@@ -14,7 +14,9 @@
                                         <table class="table table-user-information">
                                             <tbody>
                                             <tr>
-                                                <td>{{editDisp.caminhoimg}}</td>
+                                                <td>
+                                                    <img alt="User Pic" src="{{editDisp.caminhoimg}}" class="img-responsive">
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Patrimonio:</td>
@@ -40,7 +42,7 @@
                                                 <td>Mapa atual:</td>
                                                 <td>
                                                     <div style="margin-bottom: 1em"><img src="{{mapaatual.atual.img}}" class="img-responsive"></div>
-                                                    <select ng-model="mapaatual.novo">
+                                                    <select ng-model="mapaatual.novo" ng-change="trocaMapa()">
                                                         <option value="">{{mapaatual.atual.nome}}</option>
                                                         <option ng-repeat="mapa in mapas" value="{{mapa}}">{{mapa.nome}}</option>
                                                     </select>
