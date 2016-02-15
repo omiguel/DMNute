@@ -36,14 +36,19 @@
                                             </tr>
                                             <tr>
                                                 <td>Situação:</td>
-                                                <td>{{editDisp.situacao.nome}}</td>
+                                                <td>
+                                                    <select ng-model="situacaomodel.novo">
+                                                        <option value="">{{situacaomodel.atual.nome}}</option>
+                                                        <option ng-repeat="situacao in situacoes" value="{{situacao}}">{{situacao.nome}}</option>
+                                                    </select>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Mapa atual:</td>
                                                 <td>
-                                                    <div style="margin-bottom: 1em"><img src="{{mapaatual.atual.img}}" class="img-responsive"></div>
-                                                    <select ng-model="mapaatual.novo" ng-change="trocaMapa()">
-                                                        <option value="">{{mapaatual.atual.nome}}</option>
+                                                    <div style="margin-bottom: 1em"><img src="{{mapamodel.atual.img}}" class="img-responsive"></div>
+                                                    <select ng-model="mapamodel.novo" ng-change="trocaMapa()">
+                                                        <option value="">{{mapamodel.atual.nome}}</option>
                                                         <option ng-repeat="mapa in mapas" value="{{mapa}}">{{mapa.nome}}</option>
                                                     </select>
                                                 </td>
@@ -59,8 +64,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success" ng-click="cadastrarDispositivo()">Salvar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success" ng-click="salvarEdicao()">Salvar</button>
+            <button type="button" class="btn btn-danger" ng-click="limpaModels()" data-dismiss="modal">Cancelar</button>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
