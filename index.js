@@ -14,6 +14,8 @@ var busboy = require('connect-busboy');
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname + '/views'));
 app.use(express['static'](path.resolve(__dirname+ '/public')));
+app.use('/image', express['static'](path.resolve(__dirname+ '/image/')));
+//app.use('/image', express.static(path.resolve(__dirname + '/image/')));
 
 app.use(busboy());
 
@@ -24,8 +26,6 @@ io.on('connection',function(socket){
 http.listen(1337, function(err){
     console.log("Rodando na porta 1337", err);
 });
-
-app.use('/image', express.static(path.resolve(__dirname + '/image/')));
 
 /**
  * POST usado para dar update ou salvar as imagens no servidor;
