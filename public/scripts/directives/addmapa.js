@@ -24,6 +24,7 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
                 var idmapa = dado._id;
                 var retorno = function(data){
                     dado.img = data.localImagem;
+                    console.log('aqui no salvaimagemmapa', data.localImagem);
                     var msg = new Mensagem(me, 'mapa.update', dado, 'mapa');
                     SIOM.emitirServer(msg);
                 };

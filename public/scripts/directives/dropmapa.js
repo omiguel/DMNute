@@ -11,12 +11,14 @@ app.directive('dropmapa', function(){
         },
         templateUrl: '../../partial/dropmapa.html',
         link: function(scope, element){
+            var me = this;
 
             scope.mostrameusdisps = function(){
-                scope.mostradisps = scope.mostradisps? false: true;
+                scope.mostradisps = scope.mostradisps? false : true;
                 scope.$parent.$parent.mapa = scope.mapa;
                 scope.$parent.$parent.mostraclicado();
                 scope.mapa.atual = true;
+                console.log('cheguei aqui no mostrameusdisps', scope.mapa);
             };
 
             scope.showdisp = function(disp){

@@ -33,18 +33,21 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
 
     me.setDisps = function(msg){
         $scope.alldisps = msg.getDado();
-        for(var map in $scope.mapas){
-            for(var dsp in $scope.alldisps){
-                $scope.alldisps[dsp].cor = $scope.alldisps[dsp].mapa? 'color:blue' : 'color:red';
-                if($scope.mapas[map]._id == $scope.alldisps[dsp].mapa){
-                    $scope.mapas[map].disps.push($scope.alldisps[dsp]);
+        for(var disp in $scope.alldisps){
+            if($scope.alldisps[disp].mapa){
+                $scope.alldisps[disp].cor = 'color:blue';
+                for(var map in $scope.mapas){
+                    if($scope.mapas[map]._id == $scope.alldisps[disp].mapa._id){
+                        $scope.mapas[map].disps.push($scope.alldisps[disp]);
+                    }
                 }
+            } else{
+                $scope.alldisps[disp].cor = 'color:red';
             }
         }
-
         SIOM.emit('mapasprontos', $scope.mapas);
-
         $scope.$apply();
+        console.log('depois do $apply', $scope.mapas);
     };
 
     me.fazPedidos = function(){

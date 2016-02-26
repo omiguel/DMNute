@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d96f7f2-b462-47bf-a0ba-f486b07eb903" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partial/editadisp.html" afterPath="$PROJECT_DIR$/public/partial/editadisp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/editadisp.js" afterPath="$PROJECT_DIR$/public/scripts/directives/editadisp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/addmapa.js" afterPath="$PROJECT_DIR$/public/scripts/directives/addmapa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partial/dropmapa.html" afterPath="$PROJECT_DIR$/public/partial/dropmapa.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" afterPath="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/controllers/homeController.js" afterPath="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Beer-Game.iws" />
@@ -27,64 +30,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homeController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="53" selection-start="628" selection-end="628" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="884">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="91" selection-start="830" selection-end="913" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1496">
+            <state line="46" column="9" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.34962806" vertical-offset="453" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editadisp.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/partial/editadisp.html">
+      <file leaf-file-name="dropmapa.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/directives/dropmapa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="80" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1292">
-              <folding />
+            <state line="33" column="14" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+              <folding>
+                <marker date="1456497379413" expanded="true" signature="965:1045" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editadisp.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dropmapa.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/partial/dropmapa.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="130" selection-start="776" selection-end="776" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="374">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editadisp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scripts/directives/editadisp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="85" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.46325877" vertical-offset="517" max-vertical-offset="1479">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rtcRoot.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rtc/rtcRoot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="62" selection-start="2458" selection-end="2469" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1292">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispositivoManager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="24" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1122">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="64" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1530">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="caduser.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/directives/caduser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="14" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139">
+            <state line="74" column="14" selection-start="2144" selection-end="2592" vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
@@ -130,7 +120,6 @@
         <option value="$PROJECT_DIR$/public/partial/addmapa.html" />
         <option value="$PROJECT_DIR$/db/model/mapa.js" />
         <option value="$PROJECT_DIR$/public/scripts/services/utilFactory.js" />
-        <option value="$PROJECT_DIR$/public/scripts/directives/addmapa.js" />
         <option value="$PROJECT_DIR$/public/partial/cabecalho.html" />
         <option value="$PROJECT_DIR$/public/partial/caduser.html" />
         <option value="$PROJECT_DIR$/public/views/home.html" />
@@ -139,28 +128,29 @@
         <option value="$PROJECT_DIR$/public/scripts/directives/cadmodel.js" />
         <option value="$PROJECT_DIR$/db/Banco.js" />
         <option value="$PROJECT_DIR$/db/model/dispositivo.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/public/partial/caddisp.html" />
         <option value="$PROJECT_DIR$/public/scripts/directives/caddisp.js" />
         <option value="$PROJECT_DIR$/public/partial/device.html" />
-        <option value="$PROJECT_DIR$/public/partial/dropmapa.html" />
-        <option value="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/partial/listaestoque.html" />
         <option value="$PROJECT_DIR$/public/scripts/directives/listaestoque.js" />
-        <option value="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/rtc/rtcRoot.js" />
         <option value="$PROJECT_DIR$/public/partial/editadisp.html" />
         <option value="$PROJECT_DIR$/db/managers/manager.js" />
         <option value="$PROJECT_DIR$/db/managers/DispositivoManager.js" />
         <option value="$PROJECT_DIR$/public/scripts/directives/editadisp.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/public/scripts/directives/addmapa.js" />
+        <option value="$PROJECT_DIR$/public/partial/dropmapa.html" />
+        <option value="$PROJECT_DIR$/public/scripts/directives/dropmapa.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/homeController.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="1592" />
-    <option name="y" value="-8" />
+    <option name="y" value="-103" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
@@ -240,7 +230,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rtc" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,6 +245,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,7 +302,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,11 +324,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="managers" />
+              <option name="myItemId" value="partial" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -336,7 +338,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Esqueleton" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
@@ -381,15 +383,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="1592" y="-103" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885212" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09637912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19275825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -398,7 +401,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -477,11 +479,6 @@
         <state line="26" column="85" selection-start="1609" selection-end="1609" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="850" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/addmapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.60170394" vertical-offset="13" max-vertical-offset="952" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/model/modelodisp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="12" selection-start="275" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
@@ -505,11 +502,6 @@
     <entry file="file://$PROJECT_DIR$/db/managers/SituacaoManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="32" selection-start="937" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="20" selection-start="2308" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1921" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/device.html">
@@ -542,11 +534,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/services/utilFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="60" selection-start="142" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/model/dispositivo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="14" selection-start="389" selection-end="399" vertical-scroll-proportion="0.36131775" vertical-offset="0" max-vertical-offset="941" />
@@ -555,16 +542,6 @@
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/mapa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="3" selection-start="740" selection-end="740" vertical-scroll-proportion="0.5781084" vertical-offset="0" max-vertical-offset="941" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/directives/dropmapa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="14" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/partial/dropmapa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="108" selection-start="620" selection-end="620" vertical-scroll-proportion="0.14863388" vertical-offset="0" max-vertical-offset="915" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/cabecalho.js">
@@ -585,11 +562,6 @@
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/listaestoque.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="36" selection-start="498" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="126" selection-start="1413" selection-end="1456" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/Banco.js">
@@ -644,49 +616,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rtc/rtcRoot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="62" selection-start="2458" selection-end="2469" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1292">
+        <state line="63" column="62" selection-start="2458" selection-end="2469" vertical-scroll-proportion="0.69348127" vertical-offset="571" max-vertical-offset="1292">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partial/editadisp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="80" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="91" selection-start="830" selection-end="913" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="1496">
-          <folding />
-        </state>
+        <state line="67" column="80" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1292" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/managers/manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="64" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.0" vertical-offset="421" max-vertical-offset="1530">
-          <folding />
-        </state>
+        <state line="55" column="64" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.17475729" vertical-offset="809" max-vertical-offset="1530" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/managers/DispositivoManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="24" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="1122">
+        <state line="30" column="24" selection-start="801" selection-end="801" vertical-scroll-proportion="0.15117891" vertical-offset="401" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/caduser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="14" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139">
+        <state line="47" column="14" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.94313455" vertical-offset="119" max-vertical-offset="1139">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/addmapa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="77" selection-start="940" selection-end="940" vertical-scroll-proportion="0.45802337" vertical-offset="11" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/services/utilFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="16" selection-start="327" selection-end="335" vertical-scroll-proportion="0.25292242" vertical-offset="0" max-vertical-offset="941">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="33" selection-start="873" selection-end="876" vertical-scroll-proportion="0.010775862" vertical-offset="517" max-vertical-offset="1904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partial/dropmapa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="130" selection-start="776" selection-end="776" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="374">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/directives/editadisp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="85" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.46325877" vertical-offset="517" max-vertical-offset="1479">
+        <state line="74" column="14" selection-start="2144" selection-end="2592" vertical-scroll-proportion="0.0" vertical-offset="805" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/directives/dropmapa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="14" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <folding>
+            <marker date="1456497379413" expanded="true" signature="965:1045" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="53" selection-start="628" selection-end="628" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="9" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.34962806" vertical-offset="453" max-vertical-offset="1547">
           <folding />
         </state>
       </provider>
