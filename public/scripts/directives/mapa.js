@@ -13,14 +13,17 @@ app.directive('mapa', function(){
         link: function(scope, element){
             var me = this;
             me.listeners = {};
+            scope.dispositivos = [];
+            scope.teste = {};
 
-            me.setMapa = function(img){
-                scope.imagem = img;
-                scope.$apply();
+            me.recebemapaatual = function (mapa) {
+                scope.dispositivos = mapa.disps;
+                scope.teste = scope.dispositivos[0];
+                console.log('o benedito nome', scope.teste);
             };
 
             me.wiring = function(){
-                me.listeners['start'] = me.setMapa.bind(me);
+                me.listeners['mapaatual'] = me.recebemapaatual.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);

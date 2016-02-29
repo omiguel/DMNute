@@ -18,6 +18,7 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         for(var index in $scope.mapas){
             $scope.mapas[index].atual = false;
         }
+        SIOM.emit('mapaatual', $scope.mapa);
     };
 
     me.setMapas = function(msg){
