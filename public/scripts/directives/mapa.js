@@ -14,12 +14,15 @@ app.directive('mapa', function(){
             var me = this;
             me.listeners = {};
             scope.dispositivos = [];
-            scope.teste = {};
+            me.mapacompleto = {};
+            me.listenergambi = {};
 
             me.recebemapaatual = function (mapa) {
+                me.mapacompleto = mapa;
                 scope.dispositivos = mapa.disps;
-                scope.teste = scope.dispositivos[0];
-                console.log('o benedito nome', scope.teste);
+                for(var disp in scope.dispositivos){
+                    console.log('os ids', scope.dispositivos[disp]);
+                }
             };
 
             me.wiring = function(){

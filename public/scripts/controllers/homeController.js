@@ -23,10 +23,12 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
 
     me.setMapas = function(msg){
         $scope.mapas = msg.getDado();
+
         for(var index in $scope.mapas){
             $scope.mapas[index].disps = [];
         }
-        $scope.mapa = msg.getDado()[0];
+
+        $scope.mapa.img = '/image/mapa/nute.jpg';
         SIOM.emit('start', $scope.mapa.img);
         var dispositivos = new Mensagem(me, 'dispositivocomplete.read', {}, 'dispositivo');
         SIOM.emitirServer(dispositivos);

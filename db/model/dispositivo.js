@@ -23,7 +23,8 @@ var dispositivo = Mongoose.Schema({
     situacao: {type: types.ObjectId, ref: 'situacao'},
     modelo: {type: types.ObjectId, ref: 'modelodisp'},
     mapa: {type: types.ObjectId, ref: 'mapa'},
-    localizacao: {type: types.String}
+    x: {type: types.Number},
+    y: {type: types.Number}
 });
 
 module.exports = Mongoose.model('dispositivo', dispositivo);

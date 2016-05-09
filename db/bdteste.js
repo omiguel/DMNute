@@ -72,6 +72,7 @@ bdteste.prototype.criaUsers = function(){
 
     var userMsg = new Mensagem(me, 'banco.usuario.create', {res: users}, 'usuario');
     hub.emit(userMsg.getEvento(), userMsg);
+    console.log('criando usuario teste');
 };
 
 bdteste.prototype.retUserCreate = function(msg){
@@ -100,6 +101,8 @@ bdteste.prototype.criaMapa = function(){
     var msg = new Mensagem(me, 'banco.mapa.create', {res: mapas}, 'mapa');
 
     hub.emit(msg.getEvento(), msg);
+
+    console.log('criando mapa teste');
 };
 
 bdteste.prototype.retMapaCreate = function(msg){
@@ -129,6 +132,8 @@ bdteste.prototype.criaSituacao = function(){
     var msg = new Mensagem(me, 'banco.situacao.create', {res: situacoes}, 'situacao');
 
     hub.emit(msg.getEvento(), msg);
+
+    console.log('criando situacao teste');
 };
 
 bdteste.prototype.retSituacaoCreate = function(msg){
@@ -160,6 +165,8 @@ bdteste.prototype.criaModeloDisp = function(){
     var msg = new Mensagem(me, 'banco.modelodisp.create', {res: modelos}, 'modelodisp');
 
     hub.emit(msg.getEvento(), msg);
+
+    console.log('criando modelo disp teste');
 };
 
 bdteste.prototype.retModeloDispCrete = function(msg){
@@ -210,6 +217,8 @@ bdteste.prototype.criaDispositivo = function(){
 
     var msg = new Mensagem(me, 'banco.dispositivo.create', {res: arrDisps}, 'dispositivo');
     hub.emit(msg.getEvento(), msg);
+
+    console.log('criando dispositivo teste');
 
 };
 
