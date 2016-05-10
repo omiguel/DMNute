@@ -1,20 +1,28 @@
 body {
-  font-family: Century Gothic, sans-serif;
+    font-family: Century Gothic, sans-serif;
 }
 
 img {
-	width: 95%;
+    width: 95%;
 }
-.tam-content{
+
+.tam-content {
     height: 42em;
     padding-top: 1em;
 }
-.color-border{
+
+.color-border {
     border-color: lightskyblue;
 }
-.ulnobullet{
+
+.ulnobullet {
     list-style: none;
 }
-.centralize{
+
+.centralize {
     text-align: center;
+}
+
+.idispositivo {
+    position: absolute;
 }
