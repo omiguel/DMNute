@@ -2,7 +2,7 @@
  * Created by Osvaldo on 27/11/15.
  */
 
-app.directive('cadmodel', [function(){
+app.directive('cadmodel', ['utilFactory', function(utilFactory){
     return{
         restrict: 'E',
         transclude: true,
@@ -29,9 +29,24 @@ app.directive('cadmodel', [function(){
                 console.log('chegou o modelo criado', msg);
             };
 
+            me.salvaImagem = function(msg){
+                var dado = msg.getDado();
+                var file = element.find('input.file')[0].files[0];
+                var iddisp = dado._id;
+
+                var retorno = function(data){
+                    dado.caminhoimg = data.localImagem;
+                    var msg = new Mensagem(me, 'modelodisp.update', dado, 'modelodisp');
+                    SIOM.emitirServer(msg);
+                };
+
+                utilFactory.upImagem(iddisp, file, 'modelo', retorno);
+            };
+
             me.wiring = function(){
 
-                me.listeners['modelodisp.created'] = me.modeloCriado.bind(me);
+                me.listeners['modelodisp.created'] = me.salvaImagem.bind(me);
+                me.listeners['modelodisp.updated'] = me.modeloCriado.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);

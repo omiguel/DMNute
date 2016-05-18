@@ -19,6 +19,7 @@ var modelodisp = Mongoose.Schema({
     tipodisp: {type: types.String, required: true},
     marca: {type: types.String, required: true},
     modelo: {type: types.String, required: true},
+    caminhoimg: {type: types.String},
     apresentacao: {type: types.String, required: true}
 });
 

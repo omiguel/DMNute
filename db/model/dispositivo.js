@@ -18,8 +18,6 @@ var options = {
 var dispositivo = Mongoose.Schema({
     identificador: {type: types.String, required: true},
     serialnumber: {type: types.String, required: true},
-    caminhoimg: {type: types.String},
-//    nome: {type: types.String, required: true},
     situacao: {type: types.ObjectId, ref: 'situacao'},
     modelo: {type: types.ObjectId, ref: 'modelodisp'},
     mapa: {type: types.ObjectId, ref: 'mapa'},

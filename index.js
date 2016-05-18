@@ -44,6 +44,7 @@ app.post('/upimage', function(req, res){
     var salvaImagem = function(){
         fstream = fs.createWriteStream(__dirname + localSave);
         localFile.pipe(fstream);
+        console.log('salvando aqui', localSave);
         fstream.on('close', function(){
             res.end('{"success":"true", "error":"null", "localImagem":"'+localSave+'"}');
             //todo, aqui temos o objectID e a flag, quando a imagem terminar de ser salva, dar um update no banco para atualizar o caminho.
@@ -64,7 +65,7 @@ app.post('/upimage', function(req, res){
         var caminho = {
             usuario: '/image/userImagem/',
             mapa: '/image/mapa/',
-            dispositivo: '/image/dispositivo/'
+            modelo: '/image/modelo/'
         };
         localSave = caminho[doque]+id+path.extname(localFilename);
         salvaImagem();

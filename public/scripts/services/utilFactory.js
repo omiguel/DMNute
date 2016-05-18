@@ -13,7 +13,7 @@ app.factory('utilFactory', ['$http', function($http){
          * @param calback
          */
         upImagem: function(objctid, file, flag, calback){
-//            console.log('id', objctid, 'file', file, 'flag', flag);
+           // console.log('id', objctid, 'file', file, 'flag', flag);
             if(!objctid || !file || !flag){
                 throw new Error("Não é possivel salvar sem os parametros solicitados");
             }

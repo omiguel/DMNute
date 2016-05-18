@@ -2,7 +2,7 @@
  * Created by Osvaldo on 26/11/15.
  */
 
-app.directive('caddisp', ['utilFactory', function(utilFactory){
+app.directive('caddisp', [function(){
     return{
         restrict: 'E',
         transclude: true,
@@ -23,20 +23,14 @@ app.directive('caddisp', ['utilFactory', function(utilFactory){
             scope.cadastrarDispositivo = function(){
                 scope.disp.modelo = JSON.parse(scope.disp.modelo);
                 scope.disp.situacao = JSON.parse(scope.disp.situacao);
+                scope.disp.x = 0;
+                scope.disp.y = 0;
                 var msg = new Mensagem(me, 'dispositivo.create', scope.disp, 'dispositivo');
                 SIOM.emitirServer(msg);
             };
 
-            me.salvaImagem = function(msg){
-                var dado = msg.getDado();
-                var file = element.find('input.file')[0].files[0];
-                var iddisp = dado._id;
-                var retorno = function(data){
-                    dado.caminhoimg = data.localImagem;
-                    var msg = new Mensagem(me, 'dispositivo.update', dado, 'dispositivo');
-                    SIOM.emitirServer(msg);
-                };
-                utilFactory.upImagem(iddisp, file, 'dispositivo', retorno);
+            me.retdipscad = function (msg) {
+                console.log('retornou o disp cadastrado', msg.getDado());
             };
 
             me.fazpedidos = function(){
@@ -67,15 +61,10 @@ app.directive('caddisp', ['utilFactory', function(utilFactory){
                 scope.$apply();
             };
 
-            me.teste = function(msg){
-                console.log('chegou o dipositivo totamente cadastrado', msg.getDado());
-            };
-
             me.wiring = function(){
                 me.listeners['modelodisp.readed'] = me.lidoModelos.bind(me);
                 me.listeners['situacao.readed'] = me.lidoSituacoes.bind(me);
-                me.listeners['dispositivo.created'] = me.salvaImagem.bind(me);
-                me.listeners['dispositivo.updated'] = me.teste.bind(me);
+                me.listeners['dispositivo.created'] = me.retdipscad.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);

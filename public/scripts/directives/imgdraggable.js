@@ -7,6 +7,7 @@ app.directive('imgdraggable', ['$document', function($document) {
         
         link: function(scope, element, attr) {
 
+            var iddisp = attr.id;
             var meuid =  '#'+attr.id;
             var startX = 0;
             var startY = 0;
@@ -21,24 +22,12 @@ app.directive('imgdraggable', ['$document', function($document) {
                 jaSetei = true;
                 var myposition = $(meuid).position().top;
                 var myheight = element.context.offsetWidth;
-                // var myheight = element.context.offsetWidth + myposition - 14;
                 var mywidth = element.context.offsetWidth;
                 var mapaheight = $("#mapadiv").height();
                 var mapawidth = $("#mapadiv").width();
                 maxbotton = mapaheight - myheight;
-                // minbotton = 14 - myposition;
                 minbotton = 0;
                 maxrigth = mapawidth - mywidth;
-
-                console.log('myposition', myposition);
-                console.log('myheight', myheight);
-                console.log('mywidth', mywidth);
-                console.log('mapaheight', mapaheight);
-                console.log('mapawidth', mapawidth);
-                console.log('minbotton', minbotton);
-                console.log('maxbotton', maxbotton);
-                console.log('maxrigth', maxrigth);
-                console.log('-------------------------------');
 
             }
 
@@ -105,8 +94,18 @@ app.directive('imgdraggable', ['$document', function($document) {
             }
 
             function mouseup() {
+
                 $document.off('mousemove', mousemove);
                 $document.off('mouseup', mouseup);
+
+                var dado = {
+                    id: iddisp,
+                    x: x,
+                    y: y
+                };
+
+                SIOM.emit('dispnovaposicao', dado);
+
             }
         }
     };
