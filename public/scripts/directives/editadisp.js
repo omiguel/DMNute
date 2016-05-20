@@ -31,7 +31,13 @@ app.directive('editadisp', function(){
             };
 
             me.recebeMapas = function(mapas){
-                scope.mapas = mapas;
+
+                for(var map in mapas){
+                    if(!mapas[map].ehapai){
+                        scope.mapas.push(mapas[map]);
+                    }
+                }
+                
             };
 
             scope.trocaMapa = function(){

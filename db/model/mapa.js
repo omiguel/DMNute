@@ -17,7 +17,9 @@ var options = {
 
 var mapa = Mongoose.Schema({
     nome: {type: types.String, required: true},
-    img: {type: types.String}
+    img: {type: types.String},
+    ehapai: {type: types.Boolean},
+    pai: {type: types.ObjectId, ref: 'mapa'}
 });
 
 module.exports = Mongoose.model('mapa', mapa);

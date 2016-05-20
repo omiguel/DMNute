@@ -22,6 +22,25 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>Tipo:</td>
+                                                <td>
+                                                    <select ng-model="mapa.ehapai" ng-change="trocatipo()">
+                                                        <option value="">Selecione um tipo</option>
+                                                        <option ng-repeat="tipo in tipos" value="{{tipo.value}}">{{tipo.nome}}</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr ng-if="!mostrapais">
+                                                <td>Mapa atual:</td>
+                                                <td>
+                                                    <div style="margin-bottom: 1em"><img src="{{mapamodel.atual.img}}" class="img-responsive"></div>
+                                                    <select ng-model="mapamodel.novo" ng-change="trocaMapa()">
+                                                        <option value="">{{mapamodel.atual.nome}}</option>
+                                                        <option ng-repeat="mapa in mapas" value="{{mapa}}">{{mapa.nome}}</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td>Escolha a imagem:</td>
                                                 <td>
                                                     <input class="file" type="file"/>

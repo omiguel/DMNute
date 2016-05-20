@@ -12,6 +12,8 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
     $scope.listageral = 'lista geralllll';
     $scope.mapa = {};
     $scope.mapas = [];
+    $scope.arvoremapas = [];
+    $scope.mapasfilho = [];
     $scope.alldisps = [];
 
     $scope.mostraclicado = function(){
@@ -21,14 +23,45 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         SIOM.emit('mapaatual', $scope.mapa);
     };
 
-    me.setMapas = function(msg){
-        $scope.mapas = msg.getDado();
-
-        for(var index in $scope.mapas){
-            $scope.mapas[index].disps = [];
+    var montapartearvore = function (idmapa, arraymapas, cb) {
+        var filhos = [];
+        for(var map in arraymapas){
+            if(arraymapas[map].pai == idmapa){
+                if(arraymapas[map].ehapai){
+                    console.log('entrei no if da recursao', arraymapas[map], 'id do pai', idmapa);
+                    montapartearvore(arraymapas[map]._id, arraymapas, function (filfilho) {
+                        arraymapas[map].filhos = filfilho;
+                        filhos.push(arraymapas[map]);
+                        $scope.mapasfilho.push(arraymapas[map]);
+                    })
+                } else {
+                    arraymapas[map].disps = [];
+                    filhos.push(arraymapas[map]);
+                    $scope.mapasfilho.push(arraymapas[map]);
+                }
+            }
         }
 
-        $scope.mapa.img = '/image/mapa/nute.jpg';
+        cb(filhos);
+
+    };
+
+    me.setMapas = function(msg){
+        var allmapas = msg.getDado();
+        $scope.mapas = allmapas;
+
+        for(var index in allmapas){
+
+            if(allmapas[index].ehapai && !allmapas[index].pai){
+                montapartearvore(allmapas[index]._id, allmapas, function (filhos) {
+                    allmapas[index].filhos = filhos;
+                    $scope.arvoremapas.push(allmapas[index]);
+                });
+            }
+
+        }
+
+        $scope.mapa.img = '/image/mapa/marca.png';
         SIOM.emit('start', $scope.mapa.img);
         var dispositivos = new Mensagem(me, 'dispositivocomplete.read', {}, 'dispositivo');
         SIOM.emitirServer(dispositivos);
@@ -36,21 +69,25 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
 
     me.setDisps = function(msg){
         $scope.alldisps = msg.getDado();
+        console.log('setando os disps');
         for(var disp in $scope.alldisps){
             if($scope.alldisps[disp].mapa){
                 $scope.alldisps[disp].cor = 'color:blue';
-                for(var map in $scope.mapas){
-                    if($scope.mapas[map]._id == $scope.alldisps[disp].mapa._id){
-                        $scope.mapas[map].disps.push($scope.alldisps[disp]);
+                for(var map in $scope.mapasfilho){
+                    if($scope.mapasfilho[map]._id == $scope.alldisps[disp].mapa._id){
+                        $scope.mapasfilho[map].disps.push($scope.alldisps[disp]);
                     }
                 }
             } else{
                 $scope.alldisps[disp].cor = 'color:red';
             }
         }
+        console.log('vou dar apply');
         SIOM.emit('mapasprontos', $scope.mapas);
         $scope.$apply();
-        console.log('depois do $apply', $scope.mapas);
+        console.log('todos os mapas', $scope.mapas);
+        console.log('arvore mapas', $scope.arvoremapas);
+        console.log('mapas filho', $scope.mapasfilho);
     };
 
     me.fazPedidos = function(){

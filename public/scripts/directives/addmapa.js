@@ -11,9 +11,41 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
         link: function(scope, element){
             var me = this;
             me.listeners = {};
+            scope.mapas = [];
+            scope.mostrapais = true;
+            scope.mapamodel = {
+                atual: {
+                    nome: 'Selecione um mapa',
+                    img: '/image/mapa/semmapa.JPG'
+                }
+            };
+
+            scope.tipos = [
+                {
+                    nome: 'mapa pai',
+                    value: 1
+                },
+                {
+                    nome: 'mapa filho',
+                    value: 0
+                }
+            ];
+
+            scope.trocaMapa = function(){
+                scope.mapamodel.atual = JSON.parse(scope.mapamodel.novo);
+            };
+
+            scope.trocatipo = function () {
+                scope.mostrapais = parseInt(scope.mapa.ehapai);
+            };
 
             scope.adicionarMapa = function(){
-                console.log("novo mapa eh ", scope.mapa);
+
+                if(scope.mapa.ehapai == 0){
+                    var pai = angular.copy(scope.mapamodel.atual);
+                    delete pai.disps;
+                    scope.mapa.pai = pai;
+                }
                 var msg = new Mensagem(me, 'mapa.create', scope.mapa, 'mapa');
                 SIOM.emitirServer(msg);
             };
@@ -36,9 +68,19 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
                 SIOM.emit('novoMapa');
             };
 
+            me.recebeMapas = function(mapas){
+
+                for(var map in mapas){
+                    if(mapas[map].ehapai){
+                        scope.mapas.push(mapas[map]);
+                    }
+                }
+            };
+
             me.wiring = function(){
                 me.listeners['mapa.created'] = me.salvaImagem.bind(me);
                 me.listeners['mapa.updated'] = me.informaNovoMapa.bind(me);
+                me.listeners['mapasprontos'] = me.recebeMapas.bind(me);
 
                 for(var name in me.listeners){
                     SIOM.on(name, me.listeners[name]);
