@@ -11,17 +11,33 @@ app.directive('dropmapa', function(){
         },
         templateUrl: '../../partial/dropmapa.html',
         link: function(scope, element){
-            var me = this;
+            
+            scope.pai = false;
+            scope.filho = false;
 
-            me.teste = function () {
-                console.log('chegou no teste', dado);
+            scope.mostra = function () {
+                if(scope.mapa.ehapai){
+                    scope.pai = true;
+                } else {
+                    scope.filho = true;
+                }
+
+                SIOM.emit('trocamapa', scope.mapa);
+
+                scope.mapa.atual = scope.mapa.atual ? false : true;
+                if(scope.mapa.ehapai){
+                    fechafilhos(scope.mapa.filhos);
+                }
+
             };
 
-            scope.mostrameusdisps = function(){
-                scope.mostradisps = scope.mostradisps? false : true;
-                scope.$parent.$parent.mapa = scope.mapa;
-                scope.$parent.$parent.mostraclicado();
-                scope.mapa.atual = true;
+            var fechafilhos = function (filhos) {
+                for(var fil in filhos){
+                    filhos[fil].atual = false;
+                    if(filhos[fil].ehapai){
+                        fechafilhos(filhos[fil].filhos);
+                    }
+                }
             };
 
             scope.showdisp = function(disp){

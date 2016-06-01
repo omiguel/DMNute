@@ -1,6 +1,6 @@
 <img id="mapadiv" src={{imagem}} style="max-height: 40em; position: absolute">
 
 <div ng-repeat="disp in dispositivos" class="idispositivo">
-    <img id="{{disp._id}}" src="{{disp.caminhoimg}}" style="max-height: 2em; max-width: 2em;"
+    <img id="{{disp._id}}" src="{{disp.modelo.caminhoimg}}" style="max-height: 2em; max-width: 2em;"
          imgdraggable="{{disp.x}},{{disp.y}}.">
 </div>

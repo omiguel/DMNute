@@ -16,10 +16,8 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
     $scope.mapasfilho = [];
     $scope.alldisps = [];
 
-    $scope.mostraclicado = function(){
-        for(var index in $scope.mapas){
-            $scope.mapas[index].atual = false;
-        }
+    me.mostraclicado = function(mapa){
+        $scope.mapa = mapa;
         SIOM.emit('mapaatual', $scope.mapa);
     };
 
@@ -111,6 +109,7 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         me.listeners['mapa.readed'] = me.setMapas.bind(me);
         me.listeners['dispositivo.readed'] = me.setDisps.bind(me);
         me.listeners['novoMapa'] = me.fazPedidos.bind(me);
+        me.listeners['trocamapa'] = me.mostraclicado.bind(me);
 
         for(var name in me.listeners){
             SIOM.on(name, me.listeners[name]);
