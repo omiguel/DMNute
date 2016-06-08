@@ -12,7 +12,7 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
             var me = this;
             me.listeners = {};
             scope.mapas = [];
-            scope.mostrapais = true;
+            scope.mapa = {};
             scope.mapamodel = {
                 atual: {
                     nome: 'Selecione um mapa',
@@ -35,19 +35,19 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
                 scope.mapamodel.atual = JSON.parse(scope.mapamodel.novo);
             };
 
-            scope.trocatipo = function () {
-                scope.mostrapais = parseInt(scope.mapa.ehapai);
-            };
-
             scope.adicionarMapa = function(){
 
-                if(scope.mapa.ehapai == 0){
+                if(scope.mapamodel.atual._id){
                     var pai = angular.copy(scope.mapamodel.atual);
                     delete pai.disps;
                     scope.mapa.pai = pai;
+                } else {
+                    delete scope.mapa.pai;
                 }
+
                 var msg = new Mensagem(me, 'mapa.create', scope.mapa, 'mapa');
                 SIOM.emitirServer(msg);
+
             };
 
             me.salvaImagem = function(msg){
@@ -56,7 +56,7 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
                 var idmapa = dado._id;
                 var retorno = function(data){
                     dado.img = data.localImagem;
-                    console.log('aqui no salvaimagemmapa', data.localImagem);
+
                     var msg = new Mensagem(me, 'mapa.update', dado, 'mapa');
                     SIOM.emitirServer(msg);
                 };
@@ -64,7 +64,18 @@ app.directive('addmapa', ['utilFactory', function(utilFactory){
             };
 
             me.informaNovoMapa = function(msg){
-                console.log('deu update aqui', msg);
+
+                scope.mapas = [];
+                scope.mapa = {};
+                scope.mapamodel = {
+                    atual: {
+                        nome: 'Selecione um mapa',
+                        img: '/image/mapa/semmapa.JPG'
+                    }
+                };
+
+                $('#addmapa').modal('toggle');
+
                 SIOM.emit('novoMapa');
             };
 

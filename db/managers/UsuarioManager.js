@@ -5,6 +5,9 @@ var Model = require('../model/usuario.js');
 var hub = require('../../hub/hub.js');
 var Mensagem = require('../../util/mensagem.js');
 
+/**
+ * @constructor
+ */
 function UsuarioManager(){
     var me = this;
     Manager.call(me);
@@ -13,7 +16,6 @@ function UsuarioManager(){
 
     me.wiring();
 }
-
 utility.inherits(UsuarioManager, Manager);
 
 /**
@@ -30,6 +32,11 @@ UsuarioManager.prototype.executaCrud = function(msg){
     }
 };
 
+/**
+ * recebe os dados do login, verifica se existe algum usuario com esses dados no banco e retorno se erro ou sucesso.
+ *
+ * @param msg
+ */
 UsuarioManager.prototype.trataLogin = function(msg){
     var me = this;
     var dado = msg.getRes();
@@ -45,11 +52,17 @@ UsuarioManager.prototype.trataLogin = function(msg){
     });
 };
 
+/**
+ * busca todos os ousuarios do banco, e elemina os que são root.
+ *
+ * @param msg
+ */
 UsuarioManager.prototype.getAllRootLess = function(msg){
     var me = this;
     var retorno = [];
     this.model.find(function(err, res){
         if(res){
+            //todo, arrumar essa funcao, fazer essa eliminacao no banco, pois por for é muito ruim e lento.
             for(var index in res){
                 if(res[index].tipo != 0){
                     retorno.push(res[index]);
@@ -62,6 +75,9 @@ UsuarioManager.prototype.getAllRootLess = function(msg){
     })
 };
 
+/**
+ * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas
+ */
 UsuarioManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.usuario.*'] = me.executaCrud.bind(me);

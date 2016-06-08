@@ -26,7 +26,6 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         for(var map in arraymapas){
             if(arraymapas[map].pai == idmapa){
                 if(arraymapas[map].ehapai){
-                    console.log('entrei no if da recursao', arraymapas[map], 'id do pai', idmapa);
                     montapartearvore(arraymapas[map]._id, arraymapas, function (filfilho) {
                         arraymapas[map].filhos = filfilho;
                         filhos.push(arraymapas[map]);
@@ -45,6 +44,12 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
     };
 
     me.setMapas = function(msg){
+        $scope.mapa = {};
+        $scope.mapas = [];
+        $scope.arvoremapas = [];
+        $scope.mapasfilho = [];
+        $scope.alldisps = [];
+        
         var allmapas = msg.getDado();
         $scope.mapas = allmapas;
 
@@ -59,15 +64,38 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
 
         }
 
-        $scope.mapa.img = '/image/mapa/marca.png';
+        var mapa = {
+            img: '/image/mapa/marca.png',
+            nome: 'Cadevice'
+        };
+        $scope.mapa = mapa;
+        $scope.m
         SIOM.emit('start', $scope.mapa.img);
         var dispositivos = new Mensagem(me, 'dispositivocomplete.read', {}, 'dispositivo');
         SIOM.emitirServer(dispositivos);
     };
 
+    $scope.setmapainicio = function () {
+        closeallmapas(function () {
+            var mapa = {
+                img: '/image/mapa/marca.png',
+                nome: 'Cadevice'
+            };
+            $scope.mapa = mapa;
+            SIOM.emit('mapaatual', $scope.mapa);
+        });
+    };
+
+    var closeallmapas = function (cb) {
+        for(var map in $scope.mapas){
+            $scope.mapas[map].atual = false;
+        }
+
+        cb();
+    };
+
     me.setDisps = function(msg){
         $scope.alldisps = msg.getDado();
-        console.log('setando os disps');
         for(var disp in $scope.alldisps){
             if($scope.alldisps[disp].mapa){
                 $scope.alldisps[disp].cor = 'color:blue';
@@ -80,12 +108,9 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
                 $scope.alldisps[disp].cor = 'color:red';
             }
         }
-        console.log('vou dar apply');
+
         SIOM.emit('mapasprontos', $scope.mapas);
         $scope.$apply();
-        console.log('todos os mapas', $scope.mapas);
-        console.log('arvore mapas', $scope.arvoremapas);
-        console.log('mapas filho', $scope.mapasfilho);
     };
 
     me.fazPedidos = function(){

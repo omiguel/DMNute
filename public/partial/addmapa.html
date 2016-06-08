@@ -1,4 +1,4 @@
-<div class="modal-dialog">
+<div id="addmapa" class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
             <div>
@@ -24,13 +24,13 @@
                                             <tr>
                                                 <td>Tipo:</td>
                                                 <td>
-                                                    <select ng-model="mapa.ehapai" ng-change="trocatipo()">
+                                                    <select ng-model="mapa.ehapai">
                                                         <option value="">Selecione um tipo</option>
                                                         <option ng-repeat="tipo in tipos" value="{{tipo.value}}">{{tipo.nome}}</option>
                                                     </select>
                                                 </td>
                                             </tr>
-                                            <tr ng-if="!mostrapais">
+                                            <tr>
                                                 <td>Mapa atual:</td>
                                                 <td>
                                                     <div style="margin-bottom: 1em"><img src="{{mapamodel.atual.img}}" class="img-responsive"></div>

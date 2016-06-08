@@ -10,10 +10,6 @@ app.directive('showdatamap', function(){
             mapa: '='
         },
         templateUrl: '../../partial/showdatamap.html',
-        link: function(scope, element){
-
-            console.log('showdatauser', scope.mapa);
-
-        }
+        link: function(scope, element){}
     };
 });

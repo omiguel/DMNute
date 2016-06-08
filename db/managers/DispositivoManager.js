@@ -10,6 +10,9 @@ var hub = require('../../hub/hub.js');
 var Mensagem = require('../../util/mensagem.js');
 utility.inherits(DispositivoManager, Manager);
 
+/**
+ * @constructor
+ */
 function DispositivoManager(){
     var me = this;
     Manager.call(me);
@@ -22,6 +25,8 @@ function DispositivoManager(){
 /**
  * Inicia o tratamento dos namespace dos eventos, method recebe o nome da função
  * que vai ser executada por meio da herança.
+ *
+ * @param msg
  */
 DispositivoManager.prototype.executaCrud = function(msg){
     var me = this;
@@ -34,6 +39,11 @@ DispositivoManager.prototype.executaCrud = function(msg){
     }
 };
 
+/**
+ * Funcao que busca no banco os dispositivos e popula situacao, modelo e mapa.
+ *
+ * @param msg
+ */
 DispositivoManager.prototype.getDispComplete = function(msg){
     var me = this;
     var dados = msg.getRes();
@@ -48,6 +58,9 @@ DispositivoManager.prototype.getDispComplete = function(msg){
         });
 };
 
+/**
+ * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas 
+ */
 DispositivoManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.dispositivo.*'] = me.executaCrud.bind(me);

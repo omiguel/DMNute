@@ -12,8 +12,6 @@ app.directive('cabecalho', function(){
         },
         templateUrl: '../../partial/cabecalho.html',
         link: function(scope, element){
-            console.log('scope', scope.nomelogado, scope.nomemapa);
-
             var me = this;
             me.listeners = {};
 

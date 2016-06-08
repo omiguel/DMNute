@@ -9,6 +9,9 @@ var hub = require('../../hub/hub.js');
 var Mensagem = require('../../util/mensagem.js');
 utility.inherits(MapaManager, Manager);
 
+/**
+ * @constructor
+ */
 function MapaManager(){
     var me = this;
     Manager.call(me);
@@ -33,6 +36,9 @@ MapaManager.prototype.executaCrud = function(msg){
     }
 };
 
+/**
+ * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas
+ */
 MapaManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.mapa.*'] = me.executaCrud.bind(me);

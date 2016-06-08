@@ -5,11 +5,18 @@ var hub = require('../../hub/hub.js');
 
 var types = require('../Banco.js').mongoose.Schema.Types;
 
-
+/**
+ * @constructor
+ */
 function Manager() {
     console.log("manager iniciado");
 }
 
+/**
+ * Cria um determinado objeto no bd
+ * 
+ * @param msg
+ */
 Manager.prototype.create = function(msg){
     var me = this;
     var dados = msg.getRes();
@@ -24,6 +31,11 @@ Manager.prototype.create = function(msg){
     })
 };
 
+/**
+ * le um determinado obj no bd
+ * 
+ * @param msg
+ */
 Manager.prototype.read = function(msg){
     var me = this;
     var dados = msg.getRes();
@@ -46,6 +58,11 @@ Manager.prototype.read = function(msg){
     }
 };
 
+/**
+ * atualiza um determinado objto no bd
+ * 
+ * @param msg
+ */
 Manager.prototype.update = function(msg){
     var me = this;
     var dados = msg.getRes();
@@ -64,6 +81,11 @@ Manager.prototype.update = function(msg){
     })
 };
 
+/**
+ * destroi um determinado objeto no bd
+ * 
+ * @param msg
+ */
 Manager.prototype.destroy = function(msg){
     var dados = msg.getDado();
     this.model.remove({_id: dados.id}, function(err, res){
@@ -75,6 +97,13 @@ Manager.prototype.destroy = function(msg){
     })
 };
 
+/**
+ * recebe uma msg já utilizada, atualiza o evento e o dado, e a envia novamente.
+ * 
+ * @param msgAntiga
+ * @param subEvt
+ * @param dado
+ */
 Manager.prototype.emitManager = function(msgAntiga, subEvt, dado){
     var me = this;
     var evt = msgAntiga.getFlag()+subEvt;

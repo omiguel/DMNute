@@ -43,10 +43,6 @@ app.directive('caduser', ['utilFactory', function(utilFactory){
                 SIOM.emit('novoUserCadastrado');
             };
 
-            me.teste = function(msg){
-                console.log('chegou do server', msg);
-            };
-
             me.wiring = function(){
                 me.listeners['usuario.created'] = me.salvaImagem.bind(me);
                 me.listeners['usuario.updated'] = me.informaNovoUser.bind(me);
