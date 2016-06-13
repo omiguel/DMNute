@@ -1,9 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700,700italic,800,800italic);
+
 body {
-    font-family: Century Gothic, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+* {
+    transition: all 0.3s ease 0s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, ul, ol, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+iframe {
+    max-width: 100%;
 }
 
 img {
-    width: 95%;
+    max-width: 100%;
+    height: auto;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 34px;
+    color: #808080;
+}
+
+p {
+    font-size: 21px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+@media (max-width: 991px) {
+    .item {
+        margin-bottom: 30px;
+    }
 }
 
 .tam-content {
@@ -25,4 +86,57 @@ img {
 
 .idispositivo {
     position: absolute;
+}
+
+/* Geral */
+.form-control {
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: none;
+    border-radius: 30px;
+    line-height: 30px;
+    padding: 0px 15px;
+    color: rgb(126, 126, 126);
+}
+
+.form-control:focus {
+    border-color: rgb(90, 215, 223);
+    outline: medium none;
+    box-shadow: none;
+}
+
+.form-group .btn {
+    color: rgb(90, 215, 223);
+    border: 2px solid rgb(90, 215, 223);
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 0px 22px;
+    line-height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.form-group .btn:hover {
+    border-color: transparent;
+    background-color: rgb(90, 215, 223);
+    color: #fff;
+}
+
+/* Login */
+.login {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Header */
+.header .usuario {
+    float: right;
+}
+
+.header .foto-perfil {
+    float: right;
+    width: 50px;
+}
+
+.header .usuario nav {
+    float: left;
 }
