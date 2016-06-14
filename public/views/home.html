@@ -1,5 +1,5 @@
 <div>
-    <div class="panel-heading table-bordered color-border" style="margin-top: 2em">
+    <div class="panel-heading header">
         <div class="row">
             <div>
                 <cabecalho userlogado="userLogado" mapa="mapa"></cabecalho>
@@ -7,18 +7,23 @@
         </div>
     </div>
 
-    <div class="panel-heading">
+    <div class="panel-heading conteudo" style="border-top: solid 5px #000;">
+        <span class="label label-success btn" data-toggle="modal" data-target="#showdatamap"
+              ng-click="showdadosmapa()">{{mapa.nome}}</span>
         <div class="row">
-            <div class="col-md-2 table-bordered tam-content color-border centralize" style="text-align: center">
+            <div class="col-md-2  centralize" style="text-align: center">
                 <button type="button" class="btn btn-success " ng-click="setmapainicio()" style="width: 10em; margin-bottom: 0.5em;">Mapas</button>
+                <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addmapa" ng-click="addmapa()">
+                    Adicionar mapa
+                </button>
                 <div ng-repeat="map in arvoremapas">
                     <dropmapa mapa="map" ></dropmapa>
                 </div>
             </div>
-            <div class="col-md-8 table-bordered tam-content color-border">
+            <div class="col-md-8">
                 <mapa imagem="mapa.img" ></mapa>
             </div>
-            <div class="col-md-2 table-bordered tam-content color-border centralize">
+            <div class="col-md-2  centralize">
                 <div class="row">
                     <div class="col-md-6">
                         <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
