@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname + '/views'));
 app.use(express['static'](path.resolve(__dirname+ '/public')));
 app.use('/image', express['static'](path.resolve(__dirname+ '/image/')));
+app.use('/favicon.ico', express['static'](path.resolve(__dirname+ '/favicon.ico')));
 
 app.use(busboy());
 

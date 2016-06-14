@@ -15,8 +15,34 @@
                                         <table class="table table-user-information">
                                             <tbody>
                                             <tr>
+                                                <td>Nome:</td>
+                                                <td>{{mapa.nome}}</td>
+                                            </tr>
+
+                                            <tr ng-if="mapa.ehapai">
                                                 <td>Tipo:</td>
-                                                <td>{{mapa.tipomapa}}</td>
+                                                <td>Mapa pai</td>
+                                            </tr>
+                                            <tr ng-if="mapa.ehapai">
+                                                <td>Filhos:</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr ng-if="mapa.ehapai" ng-repeat="filho in mapa.filhos">
+                                                <td></td>
+                                                <td>{{filho.nome}}</td>
+                                            </tr>
+
+                                            <tr ng-if="!mapa.ehapai">
+                                                <td>Tipo:</td>
+                                                <td>Mapa filho</td>
+                                            </tr>
+                                            <tr ng-if="!mapa.ehapai">
+                                                <td>Dispositivos:</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr ng-if="!mapa.ehapai" ng-repeat="disp in mapa.disps">
+                                                <td></td>
+                                                <td>{{disp.identificador}}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -29,8 +55,35 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
-            <button type="button" class="btn btn-warning">Editar</button>
+            <button type="button" class="btn btn-danger" ng-click="deletarmapa()">Remover</button>
+            <button type="button" class="btn btn-warning" ng-click="editarmapa()">Editar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
+
+<div class="modal fade" id="cantdelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div  >
+                            <div class="panel panel-info panel-danger">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Alerta</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>Para deletar esse mapa você deve primeiro deletar os filhos!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" ng-click="fechainformativo()">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

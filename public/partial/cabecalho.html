@@ -9,7 +9,7 @@
         <div class="centralize col-md-4">
             <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#caduser">Cadastrar usuario</button>
         </div>
-        <div class="col-md-offset-1 col-md-3">
+        <div class=" col-md-3">
             <button type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Colaboradores <span class="caret"></span>
             </button>
@@ -17,19 +17,23 @@
                 <li ng-repeat="cad in cadastrados" ><a class="btn" ng-click="showuser(cad)" data-toggle="modal" data-target="#viscolab">{{cad.nome}}</a></li>
             </ul>
         </div>
+        <div class="col-md-1">
+            <img src="{{userlogado.imagem}}" class="img-circle" style="max-width: 6em"/>
+        </div>
     </div>
     <div class="row" style=" margin-top:2em; ">
         <div class="centralize col-md-4">
             <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addmapa" ng-click="addmapa()">Adicionar mapa</button>
         </div>
         <div class="col-md-4 centralize">
-            <h2><span class="label label-success btn" data-toggle="modal" data-target="#showdatamap" ng-click="showdadosmapa()">{{mapa.nome}}</span></h2>
+            <h2><span class="label label-success btn" ng-click="showdadosmapa()">{{mapa.nome}}</span></h2>
+            <!--<h2><span class="label label-success btn" data-toggle="modal" data-target="#showdatamap" ng-click="showdadosmapa()">{{mapa.nome}}</span></h2>-->
         </div>
         <div class="centralize col-md-3">
             <h2><span class="label label-success btn" data-toggle="modal" data-target="#showdatauser" ng-click="showuserlogado()">{{userlogado.nome}}</span></h2>
         </div>
         <div class="col-md-1">
-            <img src="{{userlogado.imagem}}" class="img-circle" style="max-width: 6em"/>
+            <h2><span class="label label-success btn" ng-click="sair()">sair</span></h2>
         </div>
     </div>
 </div>

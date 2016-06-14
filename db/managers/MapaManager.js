@@ -36,12 +36,22 @@ MapaManager.prototype.executaCrud = function(msg){
     }
 };
 
+MapaManager.prototype.limpamapaeremove = function (msg) {
+    console.log('chegou no manager', msg.getRes());
+    /**
+     * verificar se o mapa tem algum filho,
+     * se sim, tem que arrumar ele no banco, colocando a situacao dele pra guardado e tirando ele do mapa.
+     * se nao, apenar dar um destroy no mapa.
+     */
+};
+
 /**
  * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas
  */
 MapaManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.mapa.*'] = me.executaCrud.bind(me);
+    me.listeners['rtc.mapa.remove'] = me.limpamapaeremove.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

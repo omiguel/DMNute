@@ -2,7 +2,7 @@
  * Created by Osvaldo on 23/09/15.
  */
 
-app.directive('cabecalho', function(){
+app.directive('cabecalho', ['$location', function($location){
     return{
         restrict: 'E',
         transclude: true,
@@ -21,6 +21,11 @@ app.directive('cabecalho', function(){
 
             scope.buscandoesse = function(){
                 console.log(scope.buscando);
+            };
+
+            scope.sair = function () {
+                $location.path('/');
+                location.reload();
             };
 
             scope.addmapa = function(){
@@ -42,7 +47,7 @@ app.directive('cabecalho', function(){
             };
 
             scope.showdadosmapa = function(){
-                console.log('quero ver os dados do mapa, os admins podem configurar', scope.nomemapa);
+                $('#showdatamap').modal('toggle');
             };
 
             me.fazPedidos = function(){
@@ -75,4 +80,4 @@ app.directive('cabecalho', function(){
             me.wiring();
         }
     };
-});
+}]);

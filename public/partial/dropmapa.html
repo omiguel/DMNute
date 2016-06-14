@@ -3,8 +3,8 @@
         <button type="button" class="btn btn-danger " ng-click="mostra()" style="width: 10em">
             {{mapa.nome}}
             <span class="caret"></span>
-            <div class="glyphicon glyphicon-cog" style="margin-left: 0.5em; color: navy" ng-click="configmapa(mapa.nome)"></div>
         </button>
+        <div class="btn glyphicon glyphicon-cog" style="margin-left: -0.9em; color: navy" ng-click="configmapa(mapa.nome)"></div>
         <div ng-show="mapa.atual">
             <ul ng-if="filho" class="ulnobullet">
                 <li ng-repeat="disp in mapa.disps" style="margin-bottom: 0.3em">
