@@ -58,6 +58,47 @@ DispositivoManager.prototype.getDispComplete = function(msg){
         });
 };
 
+DispositivoManager.prototype.pedesituacao = function (msg) {
+    var me = this;
+    hub.emit('getsituacaogaurdado', msg);
+};
+
+DispositivoManager.prototype.completeguardadisps = function (msg, quantos) {
+    var me = this;
+    var conterro = 0;
+    var maparet = msg.getRes();
+    var arrdisps = maparet.disps;
+
+    if(quantos > 0){
+        var disp = arrdisps[quantos - 1];
+        disp.mapa = null;
+        disp.x = 0;
+        disp.y = 0;
+        this.model.findByIdAndUpdate(disp._id, {$set: disp}, function(err, res){
+            if(res){
+                conterro = 0;
+                me.completeguardadisps(msg, quantos -1);
+            } else{
+                if(conterro < 3){
+                    me.completeguardadisps(msg, quantos);
+                } else {
+                    console.log('errou demais', msg.getRes(), quantos);
+                }
+            }
+        })
+    } else {
+        console.log('terminou aqui');
+        hub.emit('dispsguardados', msg);
+    }
+};
+
+DispositivoManager.prototype.guardadisp = function (msg) {
+    var me = this;
+    var mapa = msg.getRes();
+    var quantos = mapa.disps.length;
+    me.completeguardadisps(msg, quantos);
+};
+
 /**
  * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas 
  */
@@ -65,6 +106,8 @@ DispositivoManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.dispositivo.*'] = me.executaCrud.bind(me);
     me.listeners['rtc.dispositivocomplete.read'] = me.getDispComplete.bind(me);
+    me.listeners['guardadisps'] = me.pedesituacao.bind(me);
+    me.listeners['retguardado'] = me.guardadisp.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

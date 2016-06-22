@@ -37,12 +37,29 @@ MapaManager.prototype.executaCrud = function(msg){
 };
 
 MapaManager.prototype.limpamapaeremove = function (msg) {
-    console.log('chegou no manager', msg.getRes());
-    /**
-     * verificar se o mapa tem algum filho,
-     * se sim, tem que arrumar ele no banco, colocando a situacao dele pra guardado e tirando ele do mapa.
-     * se nao, apenar dar um destroy no mapa.
-     */
+    var me = this;
+    var mapa = msg.getRes();
+
+    if(mapa.disps && mapa.disps.length > 0){
+        hub.emit('guardadisps', msg);
+    } else {
+        me.destroy(msg);
+    }
+};
+
+MapaManager.prototype.filhosguardados = function (msg) {
+    var me = this;
+    var mapa = msg.getRes();
+    this.model.remove({_id: mapa._id}, function(err, res){
+        if(res){
+            console.log('destrui certo', res);
+            me.emitManager(msg, '.destroied', {res: res});
+        } else{
+            console.log('deu erro no destroy', err);
+            me.emitManager(msg, '.error.destroied', {err: err});
+        }
+    })
+
 };
 
 /**
@@ -52,6 +69,7 @@ MapaManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.mapa.*'] = me.executaCrud.bind(me);
     me.listeners['rtc.mapa.remove'] = me.limpamapaeremove.bind(me);
+    me.listeners['dispsguardados'] = me.filhosguardados.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

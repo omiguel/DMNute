@@ -130,10 +130,18 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
         }
     };
 
+    me.fechamodal = function () {
+        me.fazPedidos();
+        $('#showdatamap').modal('toggle');
+    };
+
     me.wiring = function(){
         me.listeners['mapa.readed'] = me.setMapas.bind(me);
         me.listeners['dispositivo.readed'] = me.setDisps.bind(me);
+        me.listeners['mapadel.destroied'] = me.fechamodal.bind(me);
         me.listeners['novoMapa'] = me.fazPedidos.bind(me);
+        me.listeners['mapaup.updated'] = me.fechamodal.bind(me);
+        me.listeners['mapadel.deleted'] = me.fechamodal.bind(me);
         me.listeners['trocamapa'] = me.mostraclicado.bind(me);
 
         for(var name in me.listeners){

@@ -36,12 +36,31 @@ SituacaoManager.prototype.executaCrud = function(msg){
     }
 };
 
+SituacaoManager.prototype.setdispsguardado = function (msg) {
+    var me = this;
+    var mapa = msg.getRes();
+
+    this.model.findOne({nome: 'Guardado'}, function (err, res) {
+        if(res){
+            var maparet = mapa;
+            for(var disp in maparet.disps){
+                maparet.disps[disp].situacao = res;
+            }
+            msg.setRes(maparet);
+            hub.emit('retguardado', msg);
+        } else {
+            console.log('algo errado não está certo', err, res);
+        }
+    })
+};
+
 /**
  * Faz a ligacao dos evendos que essa classe vai escutar, e liga as funcoes que serao executadas
  */
 SituacaoManager.prototype.wiring = function(){
     var me = this;
     me.listeners['banco.situacao.*'] = me.executaCrud.bind(me);
+    me.listeners['getsituacaogaurdado'] = me.setdispsguardado.bind(me);
 
     for(var name in me.listeners){
         hub.on(name, me.listeners[name]);

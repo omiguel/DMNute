@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{mapa.img}}" class="img-responsive" style="min-height: 13em"> </div>
                                     <div class=" col-md-9 col-lg-9 ">
-                                        <table class="table table-user-information">
+                                        <table class="table table-user-information" ng-if="!edit">
                                             <tbody>
                                             <tr>
                                                 <td>Nome:</td>
@@ -46,6 +46,23 @@
                                             </tr>
                                             </tbody>
                                         </table>
+                                        <!--quando quiser editar essa table irá aparecer-->
+                                        <table class="table table-user-information" ng-if="edit">
+                                            <tbody>
+                                            <tr>
+                                                <td>Nome:</td>
+                                                <td>
+                                                    <input ng-model="mapaedit.nome">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Imagen:</td>
+                                                <td>
+                                                    <input ng-model="imagem" class="file" type="file"/>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -55,9 +72,15 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" ng-click="deletarmapa()">Remover</button>
-            <button type="button" class="btn btn-warning" ng-click="editarmapa()">Editar</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+            <div ng-if="!edit">
+                <button type="button" class="btn btn-danger" ng-click="deletarmapa()">Remover</button>
+                <button type="button" class="btn btn-warning" ng-click="editarmapa()">Editar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+            </div>
+            <div ng-if="edit">
+                <button type="button" class="btn btn-info" ng-click="atualizamapa()">Salvar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+            </div>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
@@ -83,6 +106,37 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" ng-click="fechainformativo()">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" id="hasdisp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div  >
+                            <div class="panel panel-info panel-danger">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Alerta</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>Esse mapa possui dispositivos, você deseja realmente deleta-lo?</h3>
+                                    <pre>
+                                        Se você deleta-lo, os dispositivos voltarão ao estoque.
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-click="deletaassimmesmo()">Sim</button>
+                <button type="button" class="btn btn-success" ng-click="fechainformativofilho()">Cancelar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
