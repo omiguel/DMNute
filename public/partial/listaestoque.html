@@ -1,9 +1,9 @@
 <div>
     <ul class="ulnobullet" style="text-align: justify">
         <li ng-repeat="disp in dispsemestoque" style="margin-bottom: 0.3em">
-            <span class="glyphicon glyphicon-cog btn btn-warning" aria-hidden="true" ng-click="pegadispmapa(disp)"
+            <span class="glyphicon glyphicon-cog" aria-hidden="true" ng-click="pegadispmapa(disp)"
                   data-toggle="modal" data-target="#vizdisp"></span>
-            <a class="btn" ng-click="showdisp(disp)" style="{{disp.cor}}">{{disp.identificador}}</a>
+            <a ng-click="showdisp(disp)" style="{{disp.cor}}">{{disp.identificador}}</a>
         </li>
     </ul>
 </div>

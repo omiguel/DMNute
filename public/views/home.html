@@ -1,52 +1,45 @@
-<div>
-    <div class="panel-heading header">
+<cabecalho userlogado="userLogado" mapa="mapa"></cabecalho>
+<main class="conteudo">
+    <div class="container">
         <div class="row">
-            <div>
-                <cabecalho userlogado="userLogado" mapa="mapa"></cabecalho>
+            <div class="col-md-12">
+                    <span class="label mapaName" data-toggle="modal" data-target="#showdatamap"
+                          ng-click="showdadosmapa()">{{mapa.nome}}</span>
             </div>
         </div>
-    </div>
-
-    <div class="panel-heading conteudo" style="border-top: solid 5px #000;">
-        <span class="label label-success btn" data-toggle="modal" data-target="#showdatamap"
-              ng-click="showdadosmapa()">{{mapa.nome}}</span>
         <div class="row">
-            <div class="col-md-2  centralize" style="text-align: center">
-                <button type="button" class="btn btn-success " ng-click="setmapainicio()" style="width: 10em; margin-bottom: 0.5em;">Mapas</button>
-                <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addmapa" ng-click="addmapa()">
-                    Adicionar mapa
-                </button>
-                <div ng-repeat="map in arvoremapas">
-                    <dropmapa mapa="map" ></dropmapa>
+            <div class="col-md-2">
+                <div class="sidemenu">
+                    <button class="item principal" ng-click="setmapainicio()">Mapas</button>
+                    <button class="item sub" data-toggle="modal" data-target="#addmapa" ng-click="addmapa()">
+                        Adicionar Mapa
+                    </button>
+                    <div ng-repeat="map in arvoremapas">
+                        <dropmapa mapa="map"></dropmapa>
+                    </div>
                 </div>
             </div>
             <div class="col-md-8">
-                <mapa imagem="mapa.img" ></mapa>
+                <mapa imagem="mapa.img"></mapa>
             </div>
-            <div class="col-md-2  centralize">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 style="margin-bottom: 0.5em"><span class="label label-success">Estoque</span></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#caddisp">Cad. disp.</button>
-                    </div>
-                    <div>
-                        <button class="btn btn-warning" style="margin-top: 0.3em;" data-toggle="modal" data-target="#cadmodel">Cad. mod.</button>
-                    </div>
+            <div class="col-md-2">
+                <div class="sidemenu">
+                    <span class="item principal">Estoque</span>
+                    <button class="item sub" data-toggle="modal" data-target="#caddisp">Adicionar dispositivo</button>
+                    <button class="item sub" data-toggle="modal" data-target="#cadmodel">Adicionar modelo</button>
+                    <listaestoque dispsemestoque="alldisps"></listaestoque>
                 </div>
-                <listaestoque dispsemestoque="alldisps"></listaestoque>
             </div>
         </div>
     </div>
-</div>
-
+</main>
 <!--modal para cadastrar dispositivo-->
 <div class="modal fade" id="caddisp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <caddisp></caddisp>
-</div><!-- /.modal -->
-
+</div>
+<!-- /.modal -->
 <!--modal para cadastrar usuarios-->
 <div class="modal fade" id="cadmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <cadmodel></cadmodel>
-</div><!-- /.modal -->
+</div>
+<!-- /.modal -->

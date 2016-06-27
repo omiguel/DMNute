@@ -10,7 +10,7 @@
                 <p class="icone-clicavel" data-ng-click="confirmaDestruir()" data-toggle="modal" style="float:right; margin-top: -14%" ><img src="images/x.png"></p>
             </div>
         </div>
-         <p style="text-align: center; margin-top:16px; color:blue">{{dispositivo.nome}}</p>
+         <p style="text-align: center; margin-top:16px;">{{dispositivo.nome}}</p>
         <div ng-show ="dispositivo.erro == 0" class="volume">
             <img class="imagemVolume icone-clicavel" src="images/{{calculaVolume()}}{{dispositivo.config.modelo}}.png">
         </div>
