@@ -131,6 +131,11 @@ app.controller("homeController",['$scope', "$location", 'getUserLogado', functio
     };
 
     me.fechamodal = function () {
+        $scope.mapa = {};
+        $scope.mapas = [];
+        $scope.arvoremapas = [];
+        $scope.mapasfilho = [];
+        $scope.alldisps = [];
         me.fazPedidos();
         $('#showdatamap').modal('toggle');
     };
