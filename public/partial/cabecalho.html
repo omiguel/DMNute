@@ -2,15 +2,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="logotipo"></div>
+                <div class="logotipo"><img src="../img/logo.png"/></div>
                 <div class="usuario">
                     <figure class="foto-perfil">
                         <img src="{{userlogado.imagem}}" class="img-circle"/>
                     </figure>
                     <nav>
                         <ul>
-                            <li><h2><span class="link" data-toggle="modal" data-target="#showdatauser"
-                                          ng-click="showuserlogado()">{{userlogado.nome}}</span></h2></li>
+                            <li>
+                                <button class="link nome" data-toggle="modal" data-target="#showdatauser"
+                                        ng-click="showuserlogado()">{{userlogado.nome}}
+                                </button>
+                            </li>
+                            <li>
+                                <button class="link" data-toggle="modal" data-target="#showdatauser"
+                                        ng-click="showuserlogado()">Editar Perfil
+                                </button>
+                            </li>
                             <li>
                                 <button class="link" data-toggle="modal" data-target="#caduser"> Cadastrar Usuario
                                 </button>
@@ -21,9 +29,10 @@
                                     Colaboradores <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li ng-repeat="cad in cadastrados"><a class="btn" ng-click="showuser(cad)"
-                                                                          data-toggle="modal"
-                                                                          data-target="#viscolab">{{cad.nome}}</a></li>
+                                    <li ng-repeat="cad in cadastrados">
+                                        <a class="btn" ng-click="showuser(cad)" data-toggle="modal"
+                                           data-target="#viscolab">{{cad.nome}}</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -33,25 +42,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-4 col-md-offset-4 text-center">
                 <form class="navbar-search">
-                    <input type="text" class="search-query" placeholder="Busca dispositivo" style="height: 2.4em"
+                    <input type="text" class="search-query" placeholder="Busca dispositivo"
                            ng-model="buscando">
-                <span class="glyphicon glyphicon-search btn btn-info" aria-hidden="true"
+                <span class="glyphicon glyphicon-search btn" aria-hidden="true"
                       ng-click="buscandoesse()"></span>
                 </form>
             </div>
         </div>
     </div>
 </header>
-
-<div>
-    <div class="row" style=" margin-top:2em; ">
-        <div class="centralize col-md-4">
-
-        </div>
-    </div>
-</div>
 
 <div class="modal fade" id="showdatauser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <viscolab user="userlogado"></viscolab>

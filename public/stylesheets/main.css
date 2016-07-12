@@ -61,6 +61,10 @@ p {
     font-weight: 300;
 }
 
+.azul {
+    color: #5AD7DF;
+}
+
 @media (max-width: 991px) {
     .item {
         margin-bottom: 30px;
@@ -89,7 +93,7 @@ p {
 }
 
 /* Geral */
-.form-control {
+.form-control, select, input {
     border: 1px solid rgb(204, 204, 204);
     box-shadow: none;
     border-radius: 30px;
@@ -98,7 +102,7 @@ p {
     color: rgb(126, 126, 126);
 }
 
-.form-control:focus {
+.form-control:focus, select:focus, input:focus {
     border-color: rgb(90, 215, 223);
     outline: medium none;
     box-shadow: none;
@@ -128,15 +132,197 @@ p {
 }
 
 /* Header */
+.header {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.header .logotipo {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
 .header .usuario {
-    float: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 .header .foto-perfil {
     float: right;
-    width: 50px;
+    width: 70px;
+    height: 70px;
+    border: solid 2px #5AD7DF;
+    border-radius: 100%;
+    overflow: hidden;
 }
 
 .header .usuario nav {
     float: left;
+    padding-top: 12px;
+}
+
+.header .usuario nav li {
+    position: relative;
+}
+
+.header .usuario nav button {
+    background: transparent;
+    border: none;
+    color: #5AD7DF;
+    display: block;
+    width: 100%;
+    padding: 0px 8px 0px 0px;
+    text-align: right;
+}
+
+.header .usuario nav button:hover {
+    color: #E8533F;
+}
+
+.header .usuario nav button.nome {
+    color: #333;
+    font-weight: 700;
+}
+
+.navbar-search {
+    width: 100%;
+    position: relative;
+    margin: 35px 0px;
+    display: table;
+    border-radius: 30px;
+    z-index: 1;
+    border: solid 2px #CCCCCC;
+}
+
+.navbar-search input[type="text"] {
+    float: left;
+    width: 85%;
+    margin: 0px;
+    border: none;
+    padding: 0px 20px;
+    line-height: 25px;
+    background-color: transparent;
+}
+
+.navbar-search .btn {
+    float: left;
+    width: 15%;
+    margin: 0px 0px -4px 0px;
+    border: solid 2px #5AD7DF;
+    color: #5AD7DF;
+    border-radius: 30px;
+    line-height: 25px;
+    padding: 0px;
+    position: relative;
+    top: -2px;
+    right: -2px;
+    z-index: 4;
+}
+
+.navbar-search .btn:hover {
+    background-color: #5AD7DF;
+    color: #fff;
+}
+
+/* Sidemenu */
+.sidemenu .item {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidemenu .item.principal {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: lowercase;
+    margin-bottom: 15px;
+}
+
+.sidemenu .item.principal:after {
+    content: ' ';
+    background-image: url('../img/mais.png');
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 15px;
+}
+
+.sidemenu .item.sub {
+    color: #5AD7DF;
+}
+
+.sidemenu dropmapa .item.principal:after {
+    display: none;
+}
+
+.caret {
+    color: #5AD7DF;
+    margin: 0px 7px;
+}
+
+.glyphicon-cog {
+    color: transparent;
+    background-image: url('../img/engrenagem.png');
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button:hover .glyphicon-cog {
+    background-image: url('../img/engrenagem2.png');
+}
+
+/* Modal */
+.modal-content {
+    border: solid 2px #CCCCCC;
+    box-shadow: none;
+}
+
+.modal-content .panel-info {
+    border: none;
+}
+
+.modal-content .panel-heading {
+    background: transparent;
+    border: none;
+    text-align: center;
+}
+
+.modal-content .panel-heading .panel-title {
+    font-weight: 700;
+    color: #333;
+}
+
+.modal-content select, .modal-content input {
+    width: 100%;
+}
+
+.salvar, .cancelar, .editar, .sair {
+    background: transparent;
+    border: none;
+    color: transparent;
+    width: 33px;
+    height: 33px;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+.salvar, .editar {
+    background-image: url('../img/sim.png');
+}
+
+.cancelar, .sair {
+    background-image: url('../img/nao.png');
 }
